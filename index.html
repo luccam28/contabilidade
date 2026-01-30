@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="robots" content="noindex, nofollow"> <meta name="description" content="ContaPro: Assessoria contábil consultiva para PMEs. Abertura de empresas, BPO Financeiro e Planejamento Tributário com atendimento humanizado.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="ContaPro: Assessoria contábil consultiva para PMEs. Abertura de empresas, BPO Financeiro e Planejamento Tributário.">
     <meta name="author" content="ContaPro Assessoria Contábil">
     <meta name="theme-color" content="#1e40af">
 
-    <meta property="og:title" content="ContaPro | Contabilidade Consultiva e Humanizada">
-    <meta property="og:description" content="Deixe a burocracia conosco e foque no crescimento do seu negócio. Fale com um contador agora.">
+    <meta property="og:title" content="ContaPro | Contabilidade Consultiva">
+    <meta property="og:description" content="Deixe a burocracia conosco e foque no crescimento do seu negócio.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://contapro.com">
     <meta property="og:image" content="https://placehold.co/1200x630/1e40af/ffffff?text=ContaPro+Assessoria">
 
-    <title>ContaPro | Contabilidade Consultiva para Sua Empresa</title>
+    <title>ContaPro | Contabilidade Consultiva</title>
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%231e40af%22/><text y=%22.9em%22 x=%22.5em%22 font-family=%22sans-serif%22 font-weight=%22bold%22 font-size=%2270%22 fill=%22white%22>C</text></svg>">
 
@@ -41,7 +42,7 @@
                             800: '#1e40af',
                             900: '#1e3a8a',
                         },
-                        whatsapp: '#25D366', // Cor oficial do WhatsApp
+                        whatsapp: '#25D366',
                     },
                     boxShadow: {
                         'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
@@ -57,7 +58,6 @@
         .delay-200 { animation-delay: 0.2s; }
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
         
-        /* Texto Gradiente */
         .text-gradient {
             background-clip: text;
             -webkit-background-clip: text;
@@ -65,7 +65,6 @@
             background-image: linear-gradient(to right, #1d4ed8, #059669);
         }
 
-        /* Animação do botão WhatsApp */
         .pulse-whatsapp {
             box-shadow: 0 0 0 0 rgba(37, 211, 102, 1);
             animation: pulse-green 2s infinite;
@@ -74,6 +73,11 @@
             0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
             70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
             100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Transição suave para o card expandir */
+        .service-details {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
         }
     </style>
 
@@ -97,23 +101,25 @@
     }
     </script>
 </head>
-<body class="font-sans text-gray-600 bg-gray-50 antialiased overflow-x-hidden">
+<body class="font-sans text-gray-600 bg-gray-50 antialiased overflow-x-hidden" id="home">
 
     <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
         <div class="container mx-auto px-4 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="#" class="flex items-center gap-2 group" aria-label="ContaPro Início">
+                <a href="#home" class="flex items-center gap-2 group" aria-label="ContaPro Início">
                     <div class="w-10 h-10 bg-brand-700 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
                         CP
                     </div>
                     <span class="text-2xl font-heading font-bold text-gray-900 tracking-tight">Conta<span class="text-brand-600">Pro</span></span>
                 </a>
 
-                <nav class="hidden md:flex items-center gap-8" role="navigation">
-                    <a href="#servicos" class="text-sm font-medium text-gray-600 hover:text-brand-700 transition-colors">Serviços</a>
-                    <a href="#sobre" class="text-sm font-medium text-gray-600 hover:text-brand-700 transition-colors">Quem Somos</a>
-                    <a href="#depoimentos" class="text-sm font-medium text-gray-600 hover:text-brand-700 transition-colors">Clientes</a>
-                    <a href="#contato" class="text-sm font-medium text-gray-600 hover:text-brand-700 transition-colors">Contato</a>
+                <nav class="hidden md:flex items-center gap-8 uppercase text-xs font-bold tracking-wide" role="navigation">
+                    <a href="#home" class="text-gray-600 hover:text-brand-700 transition-colors">Home</a>
+                    <a href="#sobre" class="text-gray-600 hover:text-brand-700 transition-colors">A Empresa</a>
+                    <a href="#servicos" class="text-gray-600 hover:text-brand-700 transition-colors">Serviços</a>
+                    <a href="#clientes" class="text-gray-600 hover:text-brand-700 transition-colors">Clientes</a>
+                    <a href="#depoimentos" class="text-gray-600 hover:text-brand-700 transition-colors">Depoimentos</a>
+                    <a href="#contato" class="text-gray-600 hover:text-brand-700 transition-colors">Contato</a>
                 </nav>
 
                 <div class="hidden md:block">
@@ -132,11 +138,13 @@
         </div>
 
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
-            <div class="flex flex-col p-4 space-y-4">
-                <a href="#servicos" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg font-medium">Serviços</a>
-                <a href="#sobre" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg font-medium">Quem Somos</a>
-                <a href="#depoimentos" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg font-medium">Clientes</a>
-                <a href="https://wa.me/5511999999999" target="_blank" class="block px-4 py-3 bg-whatsapp text-center text-white rounded-lg font-bold hover:bg-green-600">Chamar no WhatsApp</a>
+            <div class="flex flex-col p-4 space-y-4 uppercase text-sm font-bold">
+                <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">Home</a>
+                <a href="#sobre" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">A Empresa</a>
+                <a href="#servicos" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">Serviços</a>
+                <a href="#clientes" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">Clientes</a>
+                <a href="#depoimentos" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">Depoimentos</a>
+                <a href="#contato" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">Contato</a>
             </div>
         </div>
     </header>
@@ -161,7 +169,7 @@
                         </h1>
                         
                         <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            Chega de falar "contabilês". Na ContaPro, cuidamos da burocracia, dos impostos e da conformidade para que você tenha tempo de fazer o que sabe de melhor: <strong>empreender.</strong>
+                            Chega de falar "contabilês". Na ContaPro, cuidamos da burocracia para que você tenha tempo de fazer o que sabe de melhor: <strong>empreender.</strong>
                         </p>
                         
                         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -173,96 +181,23 @@
                                 Conhecer Serviços
                             </a>
                         </div>
-                        
-                        <div class="mt-8 flex items-center justify-center lg:justify-start gap-6 text-sm text-gray-500">
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                <span>Abertura de Empresa Grátis*</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                                <span>Atendimento Humanizado</span>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="lg:w-1/2 w-full fade-in-up delay-200">
                         <div class="relative mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform rotate-1 hover:rotate-0 transition-transform duration-500">
                             <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipe ContaPro em reunião" class="w-full h-auto object-cover">
-                            
-                            <div class="absolute bottom-6 left-6 bg-white p-4 rounded-xl shadow-lg border border-gray-100 flex items-center gap-3 animate-bounce" style="animation-duration: 4s;">
-                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                </div>
-                                <div>
-                                    <div class="text-sm font-bold text-gray-900">Empresa Regularizada</div>
-                                    <div class="text-xs text-gray-500">CNPJ Ativo em 24h</div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section id="servicos" class="py-20 bg-white" aria-label="Nossos Serviços">
-            <div class="container mx-auto px-4">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-                        Soluções completas para sua <br><span class="text-brand-700">tranquilidade fiscal</span>
-                    </h2>
-                    <p class="text-lg text-gray-600">
-                        Do MEI ao Lucro Real, temos a expertise necessária para manter sua empresa saudável.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 group">
-                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-brand-600 mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Abertura de Empresas</h3>
-                        <p class="text-gray-600 leading-relaxed">Abrimos seu CNPJ em tempo recorde. Orientamos sobre a melhor natureza jurídica para você pagar menos impostos legalmente.</p>
-                    </div>
-
-                    <div class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 group">
-                        <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Planejamento Tributário</h3>
-                        <p class="text-gray-600 leading-relaxed">Analisamos seu faturamento e reenquadramos sua empresa no regime mais econômico (Simples, Presumido ou Real).</p>
-                    </div>
-
-                    <div class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 group">
-                        <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">BPO Financeiro</h3>
-                        <p class="text-gray-600 leading-relaxed">Terceirize seu financeiro. Nós cuidamos das contas a pagar, receber e conciliação bancária, você foca em vender.</p>
-                    </div>
-
-                    <div class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 group">
-                        <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Folha de Pagamento</h3>
-                        <p class="text-gray-600 leading-relaxed">Gestão completa de RH. Admissão, demissão, férias, 13º e eSocial. Tudo dentro da lei trabalhista.</p>
-                    </div>
-                    
-                    <div class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 group">
-                        <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center text-teal-600 mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Imposto de Renda (PF e PJ)</h3>
-                        <p class="text-gray-600 leading-relaxed">Evite a malha fina. Fazemos a declaração anual dos sócios e da empresa com cruzamento de dados inteligente.</p>
-                    </div>
-
-                    <div class="p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 group">
-                        <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center text-pink-600 mb-6 group-hover:scale-110 transition-transform">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Certificado Digital</h3>
-                        <p class="text-gray-600 leading-relaxed">Emissão e renovação de certificados digitais (e-CNPJ e e-CPF) com suporte na instalação.</p>
+                <div id="clientes" class="mt-20 pt-10 border-t border-gray-100 text-center">
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-6">Confiança de mais de 500 PMEs modernas</p>
+                    <div class="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                        <span class="text-xl font-heading font-bold text-gray-800">Tech<span class="text-blue-600">Corp</span></span>
+                        <span class="text-xl font-heading font-bold text-gray-800">Agro<span class="text-green-600">Leaf</span></span>
+                        <span class="text-xl font-heading font-bold text-gray-800">Studio<span class="text-purple-600">Design</span></span>
+                        <span class="text-xl font-heading font-bold text-gray-800">Varejo<span class="text-orange-600">Express</span></span>
+                        <span class="text-xl font-heading font-bold text-gray-800">Nova<span class="text-cyan-600">Saúde</span></span>
                     </div>
                 </div>
             </div>
@@ -278,10 +213,7 @@
                             Uma história construída com <br><span class="text-green-400">integridade e proximidade</span>.
                         </h2>
                         <p class="text-brand-100 text-lg mb-6 leading-relaxed">
-                            A ContaPro não é um robô. Somos um time de especialistas apaixonados por empreendedorismo. Fundada em 2015, nascemos com a missão de traduzir a complexa legislação brasileira em oportunidades para pequenas e médias empresas.
-                        </p>
-                        <p class="text-brand-100 text-lg mb-8 leading-relaxed">
-                            Acreditamos que todo CNPJ tem um sonho por trás. Nosso trabalho é garantir que a burocracia não atrapalhe esse sonho.
+                            A ContaPro não é um robô. Somos um time de especialistas apaixonados por empreendedorismo. Fundada em 2015, nascemos com a missão de traduzir a complexa legislação brasileira em oportunidades.
                         </p>
                         
                         <ul class="space-y-4 mb-8">
@@ -293,40 +225,121 @@
                                 <span class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-brand-900 font-bold text-xs">✓</span>
                                 <span class="font-medium text-white">Reuniões periódicas de alinhamento</span>
                             </li>
-                            <li class="flex items-center gap-3">
-                                <span class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-brand-900 font-bold text-xs">✓</span>
-                                <span class="font-medium text-white">Tecnologia para agilizar, Humanidade para acolher</span>
-                            </li>
                         </ul>
                     </div>
                     
                     <div class="lg:w-1/2 grid grid-cols-2 gap-6">
-                        <div class="bg-brand-800 p-6 rounded-2xl border border-brand-700 hover:transform hover:-translate-y-1 transition-transform">
+                        <div class="bg-brand-800 p-6 rounded-2xl border border-brand-700">
                             <div class="text-4xl font-bold text-green-400 mb-2">+10 Anos</div>
-                            <div class="text-sm text-brand-200">De experiência no mercado contábil</div>
+                            <div class="text-sm text-brand-200">De experiência</div>
                         </div>
-                        <div class="bg-brand-800 p-6 rounded-2xl border border-brand-700 mt-8 hover:transform hover:-translate-y-1 transition-transform">
+                        <div class="bg-brand-800 p-6 rounded-2xl border border-brand-700 mt-8">
                             <div class="text-4xl font-bold text-green-400 mb-2">+800</div>
-                            <div class="text-sm text-brand-200">Empresas abertas com sucesso</div>
-                        </div>
-                        <div class="bg-brand-800 p-6 rounded-2xl border border-brand-700 hover:transform hover:-translate-y-1 transition-transform">
-                            <div class="text-4xl font-bold text-green-400 mb-2">98%</div>
-                            <div class="text-sm text-brand-200">Índice de retenção de clientes</div>
-                        </div>
-                        <div class="bg-brand-800 p-6 rounded-2xl border border-brand-700 mt-8 hover:transform hover:-translate-y-1 transition-transform">
-                            <div class="text-4xl font-bold text-green-400 mb-2">100%</div>
-                            <div class="text-sm text-brand-200">Comprometidos com seu negócio</div>
+                            <div class="text-sm text-brand-200">Empresas abertas</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="depoimentos" class="py-20 bg-gray-50" aria-labelledby="heading-testimonials">
+        <section id="servicos" class="py-20 bg-white" aria-label="Nossos Serviços">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+                        Soluções completas para sua <br><span class="text-brand-700">tranquilidade fiscal</span>
+                    </h2>
+                    <p class="text-lg text-gray-600">
+                        Clique nos cards para saber mais.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+                    
+                    <div class="h-full p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-brand-600 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Abertura de Empresa</h3>
+                        <p class="text-gray-600 text-sm mb-4">Seu CNPJ ativo em tempo recorde e sem burocracia.</p>
+                        
+                        <div id="desc-abertura" class="service-details max-h-0 overflow-hidden opacity-0">
+                            <p class="text-gray-500 text-sm mb-4 pt-2 border-t border-gray-200">
+                                Cuidamos de todo o processo na Junta Comercial, Receita e Prefeitura. Orientamos sobre a melhor natureza jurídica para você pagar menos impostos legalmente desde o dia 1.
+                            </p>
+                        </div>
+                        
+                        <button onclick="toggleService('desc-abertura', this)" class="mt-auto text-brand-600 font-bold text-sm hover:underline flex items-center gap-1 group">
+                            <span>Saiba Mais</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
+
+                    <div class="h-full p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Migrar MEI para ME</h3>
+                        <p class="text-gray-600 text-sm mb-4">Cresceu? Nós fazemos o desenquadramento com segurança.</p>
+                        
+                        <div id="desc-mei" class="service-details max-h-0 overflow-hidden opacity-0">
+                            <p class="text-gray-500 text-sm mb-4 pt-2 border-t border-gray-200">
+                                Quando você fatura mais de R$ 81k, é hora de virar Microempresa. Ajustamos sua tributação para o Simples Nacional, garantindo conformidade e permitindo contratações.
+                            </p>
+                        </div>
+                        
+                        <button onclick="toggleService('desc-mei', this)" class="mt-auto text-brand-600 font-bold text-sm hover:underline flex items-center gap-1 group">
+                            <span>Saiba Mais</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
+
+                    <div class="h-full p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Imposto de Renda</h3>
+                        <p class="text-gray-600 text-sm mb-4">Declaração PF e PJ sem sustos com a malha fina.</p>
+                        
+                        <div id="desc-ir" class="service-details max-h-0 overflow-hidden opacity-0">
+                            <p class="text-gray-500 text-sm mb-4 pt-2 border-t border-gray-200">
+                                Análise cruzada de dados bancários e patrimoniais. Fazemos a declaração anual dos sócios e da empresa, garantindo que você pague apenas o justo ou receba a restituição devida.
+                            </p>
+                        </div>
+                        
+                        <button onclick="toggleService('desc-ir', this)" class="mt-auto text-brand-600 font-bold text-sm hover:underline flex items-center gap-1 group">
+                            <span>Saiba Mais</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
+
+                    <div class="h-full p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 flex flex-col">
+                        <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-pink-600 mb-6">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Certificado Digital</h3>
+                        <p class="text-gray-600 text-sm mb-4">Emissão de e-CNPJ e e-CPF com rapidez.</p>
+                        
+                        <div id="desc-cert" class="service-details max-h-0 overflow-hidden opacity-0">
+                            <p class="text-gray-500 text-sm mb-4 pt-2 border-t border-gray-200">
+                                Essencial para emitir notas e assinar documentos. Oferecemos suporte na compra e instalação do seu certificado A1 ou A3, por videoconferência ou presencial.
+                            </p>
+                        </div>
+                        
+                        <button onclick="toggleService('desc-cert', this)" class="mt-auto text-brand-600 font-bold text-sm hover:underline flex items-center gap-1 group">
+                            <span>Saiba Mais</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="depoimentos" class="py-20 bg-gray-50">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16">
-                    <h2 id="heading-testimonials" class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-                        O que dizem nossos <span class="text-brand-700">parceiros</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+                        O que dizem nossos <span class="text-brand-700">clientes</span>
                     </h2>
                     <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                         A satisfação de quem confia a gestão da empresa à ContaPro.
@@ -337,108 +350,28 @@
                     <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full">
                         <div class="flex text-yellow-400 mb-4">★★★★★</div>
                         <blockquote class="text-gray-600 mb-6 flex-grow">
-                            "Eu tinha medo de trocar de contador, mas a migração para a ContaPro foi tranquila. Eles revisaram meus impostos e economizei 15% já no primeiro mês."
+                            "Eu tinha medo de trocar de contador, mas a migração para a ContaPro foi tranquila. Economizei 15% já no primeiro mês."
                         </blockquote>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">MC</div>
-                            <div>
-                                <div class="font-bold text-gray-900">Mariana Costa</div>
-                                <div class="text-sm text-gray-500">Sócia, Costa & Silva Arquitetura</div>
-                            </div>
-                        </div>
+                        <div class="font-bold text-gray-900">Mariana Costa</div>
+                        <div class="text-sm text-gray-500">Sócia, Costa & Silva Arquitetura</div>
                     </div>
 
                     <div class="bg-white p-8 rounded-2xl shadow-md border border-brand-100 transform md:-translate-y-4 flex flex-col h-full relative">
                         <div class="flex text-yellow-400 mb-4">★★★★★</div>
                         <blockquote class="text-gray-600 mb-6 flex-grow">
-                            "O atendimento deles no WhatsApp é incrível. Respondem rápido e explicam tudo sem termos difíceis. Sinto que tenho um diretor financeiro ao meu lado."
+                            "O atendimento deles no WhatsApp é incrível. Respondem rápido e explicam tudo sem termos difíceis."
                         </blockquote>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">RS</div>
-                            <div>
-                                <div class="font-bold text-gray-900">Ricardo Silva</div>
-                                <div class="text-sm text-gray-500">CEO, TechStart Soluções</div>
-                            </div>
-                        </div>
+                        <div class="font-bold text-gray-900">Ricardo Silva</div>
+                        <div class="text-sm text-gray-500">CEO, TechStart</div>
                     </div>
 
                     <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full">
                         <div class="flex text-yellow-400 mb-4">★★★★★</div>
                         <blockquote class="text-gray-600 mb-6 flex-grow">
-                            "Abriram minha empresa em 2 dias. Tudo digital, sem eu precisar ir ao cartório. Recomendo para todo mundo que quer agilidade."
+                            "Abriram minha empresa em 2 dias. Tudo digital. Recomendo para todo mundo que quer agilidade."
                         </blockquote>
-                        <div class="flex items-center gap-4 mt-auto">
-                            <div class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">AL</div>
-                            <div>
-                                <div class="font-bold text-gray-900">Ana Lima</div>
-                                <div class="text-sm text-gray-500">Dentista, Clínica Sorrir</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="planos" class="py-20 bg-white" aria-labelledby="heading-pricing">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 id="heading-pricing" class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-                        Planos que cabem no seu bolso
-                    </h2>
-                    <p class="text-lg text-gray-600">
-                        Honorários justos e transparentes. Escolha o ideal para o momento do seu negócio.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto items-center">
-                    <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                        <h3 class="text-xl font-bold text-gray-900">MEI & Autônomos</h3>
-                        <p class="text-sm text-gray-500 mt-2">Regularize sua atuação profissional.</p>
-                        <div class="my-6">
-                            <span class="text-sm text-gray-500">A partir de</span>
-                            <div class="text-4xl font-bold text-gray-900">R$ 149<span class="text-lg font-normal text-gray-500">/mês</span></div>
-                        </div>
-                        <a href="https://wa.me/5511999999999?text=Tenho%20interesse%20no%20plano%20MEI" target="_blank" class="block w-full py-3 px-4 bg-gray-100 text-brand-700 font-bold text-center rounded-lg hover:bg-gray-200 transition-colors">Solicitar Proposta</a>
-                        <ul class="mt-8 space-y-4 text-sm text-gray-600">
-                            <li class="flex items-center gap-2">✓ Declaração Anual (DASN)</li>
-                            <li class="flex items-center gap-2">✓ Emissão de DAS Mensal</li>
-                            <li class="flex items-center gap-2">✓ Controle de Faturamento</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-brand-900 border border-brand-700 rounded-2xl p-8 shadow-2xl relative transform md:scale-105 z-10">
-                        <div class="absolute top-0 right-0 left-0 -mt-4 flex justify-center">
-                            <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Mais Contratado</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-white">Simples Nacional</h3>
-                        <p class="text-sm text-brand-200 mt-2">Comércio e Prestadores de Serviço.</p>
-                        <div class="my-6">
-                            <span class="text-sm text-brand-200">A partir de</span>
-                            <div class="text-5xl font-bold text-white">R$ 399<span class="text-lg font-normal text-brand-300">/mês</span></div>
-                        </div>
-                        <a href="https://wa.me/5511999999999?text=Tenho%20interesse%20no%20plano%20Simples" target="_blank" class="block w-full py-4 px-6 bg-green-500 text-white font-bold text-center rounded-lg hover:bg-green-600 transition-colors shadow-lg">Falar com Contador</a>
-                        <ul class="mt-8 space-y-4 text-sm text-brand-100">
-                            <li class="flex items-center gap-2">✓ Obrigações Fiscais e Contábeis</li>
-                            <li class="flex items-center gap-2">✓ Folha de Pagamento (até 2 sócios)</li>
-                            <li class="flex items-center gap-2">✓ Atendimento via WhatsApp</li>
-                            <li class="flex items-center gap-2">✓ Portal do Cliente Digital</li>
-                        </ul>
-                    </div>
-
-                    <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                        <h3 class="text-xl font-bold text-gray-900">Lucro Presumido</h3>
-                        <p class="text-sm text-gray-500 mt-2">Clínicas e empresas maiores.</p>
-                        <div class="my-6">
-                            <span class="text-sm text-gray-500">Sob Consulta</span>
-                            <div class="text-2xl font-bold text-gray-900">Personalizado</div>
-                        </div>
-                        <a href="https://wa.me/5511999999999?text=Tenho%20interesse%20no%20plano%20Presumido" target="_blank" class="block w-full py-3 px-4 bg-gray-100 text-brand-700 font-bold text-center rounded-lg hover:bg-gray-200 transition-colors">Agendar Reunião</a>
-                        <ul class="mt-8 space-y-4 text-sm text-gray-600">
-                            <li class="flex items-center gap-2">✓ Contabilidade Completa</li>
-                            <li class="flex items-center gap-2">✓ BPO Financeiro Opcional</li>
-                            <li class="flex items-center gap-2">✓ Consultoria Tributária</li>
-                            <li class="flex items-center gap-2">✓ Reuniões Mensais</li>
-                        </ul>
+                        <div class="font-bold text-gray-900">Ana Lima</div>
+                        <div class="text-sm text-gray-500">Dentista</div>
                     </div>
                 </div>
             </div>
@@ -449,8 +382,8 @@
                 <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
                     <div class="bg-brand-800 p-10 md:w-1/2 text-white flex flex-col justify-between">
                         <div>
-                            <h3 class="text-2xl font-bold mb-4">Vamos tomar um café?</h3>
-                            <p class="text-brand-100 mb-8">Venha nos visitar ou agende uma chamada de vídeo. Estamos prontos para ouvir seus desafios.</p>
+                            <h3 class="text-2xl font-bold mb-4">Fale Conosco</h3>
+                            <p class="text-brand-100 mb-8">Estamos prontos para ouvir seus desafios.</p>
                             
                             <div class="space-y-6">
                                 <div class="flex items-start gap-4">
@@ -460,10 +393,8 @@
                                     <div>
                                         <h4 class="font-bold">WhatsApp & Telefone</h4>
                                         <p class="text-brand-100">(11) 99999-9999</p>
-                                        <p class="text-brand-200 text-sm">Seg a Sex, das 9h às 18h</p>
                                     </div>
                                 </div>
-                                
                                 <div class="flex items-start gap-4">
                                     <div class="w-10 h-10 bg-brand-700 rounded-full flex items-center justify-center flex-shrink-0">
                                         <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
@@ -473,31 +404,6 @@
                                         <p class="text-brand-100">contato@contapro.com</p>
                                     </div>
                                 </div>
-
-                                <div class="flex items-start gap-4">
-                                    <div class="w-10 h-10 bg-brand-700 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">Endereço</h4>
-                                        <p class="text-brand-100">Av. Paulista, 1000 - Sala 42<br>Bela Vista - São Paulo/SP</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="mt-10">
-                            <p class="text-sm font-bold uppercase tracking-wider mb-4 text-brand-200">Siga-nos</p>
-                            <div class="flex gap-4">
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors border border-white/10" aria-label="Instagram">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44 0 .795.645 1.44 1.441 1.44.795 0 1.439-.645 1.439-1.44 0-.794-.644-1.44-1.439-1.44z"/></svg>
-                                </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors border border-white/10" aria-label="LinkedIn">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors border border-white/10" aria-label="Facebook">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -507,12 +413,10 @@
                             <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600 animate-pulse">
                                 <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                             </div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Atendimento Imediato</h3>
-                            <p class="text-gray-600 mb-8">Não gostamos de formulários. Clique abaixo e fale diretamente com um especialista agora mesmo.</p>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Atendimento Rápido</h3>
                             <a href="https://wa.me/5511999999999" target="_blank" class="inline-block w-full py-4 px-6 bg-whatsapp text-white font-bold text-lg rounded-xl hover:bg-green-600 transition-all shadow-xl hover:shadow-green-500/40 transform hover:-translate-y-1">
-                                Iniciar Conversa no WhatsApp
+                                Iniciar Conversa
                             </a>
-                            <p class="text-xs text-gray-400 mt-4">Tempo médio de resposta: 5 minutos</p>
                         </div>
                     </div>
                 </div>
@@ -520,7 +424,7 @@
         </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800" id="main-footer">
         <div class="container mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div class="col-span-1 md:col-span-2">
@@ -529,17 +433,8 @@
                         <span class="text-xl font-bold text-white">Conta<span class="text-brand-500">Pro</span></span>
                     </div>
                     <p class="text-sm leading-relaxed max-w-xs">
-                        Assessoria contábil moderna, feita de pessoas para pessoas. Simplificamos sua vida financeira com ética e transparência.
+                        Assessoria contábil moderna, feita de pessoas para pessoas.
                     </p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Serviços</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#servicos" class="hover:text-white transition-colors">Abertura de Empresa</a></li>
-                        <li><a href="#servicos" class="hover:text-white transition-colors">Migrar MEI para ME</a></li>
-                        <li><a href="#servicos" class="hover:text-white transition-colors">Imposto de Renda</a></li>
-                        <li><a href="#servicos" class="hover:text-white transition-colors">Certificado Digital</a></li>
-                    </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Legal</h4>
@@ -550,21 +445,24 @@
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-                <p>&copy; 2024 ContaPro Assessoria Contábil Ltda. CRC-SP 12345/O</p>
-                <p class="mt-2 md:mt-0">Feito com 💙 para empreendedores.</p>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col items-center text-xs text-center space-y-2">
+                <p>&copy; 2026 ContaPro Solutions Ltda • CNPJ 50.213.863/0001-15 - Desenvolvido por <a href="https://redesigner.com.br" target="_blank" class="text-white hover:text-brand-500 underline decoration-dotted">REDESIGNER PPM</a></p>
+                <p>Feito com ❤️ para quem ama empreender.</p>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/5511999999999" target="_blank" class="fixed bottom-6 left-6 z-50 flex items-center justify-center w-14 h-14 bg-whatsapp text-white rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 pulse-whatsapp group" aria-label="Falar no WhatsApp">
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        <span class="absolute left-16 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Falar Agora</span>
-    </a>
+    <div id="floating-buttons" class="fixed bottom-6 right-6 z-40 flex flex-col gap-4 items-end transition-opacity duration-300">
+        
+        <a href="https://wa.me/5511999999999" target="_blank" class="flex items-center justify-center w-14 h-14 bg-whatsapp text-white rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 pulse-whatsapp group" aria-label="Falar no WhatsApp">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        </a>
 
-    <button id="back-to-top" class="fixed bottom-6 right-6 bg-brand-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center translate-y-20 opacity-0 transition-all duration-300 hover:bg-brand-700 focus:outline-none z-40" aria-label="Voltar ao topo">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-    </button>
+        <button id="back-to-top" class="bg-brand-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-brand-700 focus:outline-none" aria-label="Voltar ao topo">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </button>
+    </div>
 
     <div id="cookie-banner" class="fixed bottom-0 w-full bg-white border-t border-gray-200 shadow-2xl p-4 z-50 hidden md:flex justify-between items-center transform translate-y-full transition-transform duration-500">
         <div class="text-sm text-gray-600 max-w-2xl">
@@ -577,78 +475,92 @@
     </div>
 
     <div id="modal-backdrop" class="fixed inset-0 bg-black/50 z-[60] hidden backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
-
     <div id="modal-terms" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl z-[70] w-11/12 max-w-2xl max-h-[80vh] overflow-y-auto hidden p-8">
-        <div class="flex justify-between items-center mb-6">
-            <h3 class="text-2xl font-bold text-gray-900">Termos de Uso</h3>
-            <button onclick="closeModal()" class="text-gray-400 hover:text-red-500"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
-        </div>
-        <div class="prose text-gray-600 text-sm">
-            <p><strong>1. Aceitação:</strong> Ao contratar a ContaPro, você aceita...</p>
-            <p><strong>2. Serviços:</strong> A prestação de serviços contábeis inclui...</p>
-            <p>(Texto jurídico simulado...)</p>
-        </div>
+        <h3 class="text-2xl font-bold mb-4">Termos de Uso</h3>
+        <p class="text-gray-600">Conteúdo dos Termos...</p>
+        <button onclick="closeModal()" class="mt-4 text-red-500 underline">Fechar</button>
     </div>
-
     <div id="modal-privacy" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl z-[70] w-11/12 max-w-2xl max-h-[80vh] overflow-y-auto hidden p-8">
-        <div class="flex justify-between items-center mb-6">
-            <h3 class="text-2xl font-bold text-gray-900">Política de Privacidade</h3>
-            <button onclick="closeModal()" class="text-gray-400 hover:text-red-500"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
-        </div>
-        <div class="prose text-gray-600 text-sm">
-            <p><strong>Coleta de Dados:</strong> Coletamos apenas dados necessários para...</p>
-            <p><strong>Uso:</strong> Seus dados são usados para emissão de guias...</p>
-            <p>(Texto jurídico simulado conforme LGPD...)</p>
-        </div>
+        <h3 class="text-2xl font-bold mb-4">Privacidade</h3>
+        <p class="text-gray-600">Conteúdo da Política...</p>
+        <button onclick="closeModal()" class="mt-4 text-red-500 underline">Fechar</button>
     </div>
-
     <div id="modal-cookies-policy" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl z-[70] w-11/12 max-w-2xl max-h-[80vh] overflow-y-auto hidden p-8">
-        <div class="flex justify-between items-center mb-6">
-            <h3 class="text-2xl font-bold text-gray-900">Política de Cookies</h3>
-            <button onclick="closeModal()" class="text-gray-400 hover:text-red-500"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
-        </div>
-        <div class="prose text-gray-600 text-sm">
-            <p>Utilizamos cookies para métricas de acesso (Google Analytics)...</p>
-        </div>
+        <h3 class="text-2xl font-bold mb-4">Cookies</h3>
+        <p class="text-gray-600">Conteúdo dos Cookies...</p>
+        <button onclick="closeModal()" class="mt-4 text-red-500 underline">Fechar</button>
     </div>
 
     <script>
         // Menu Mobile
         const btnMobile = document.getElementById('mobile-menu-btn');
         const menuMobile = document.getElementById('mobile-menu');
-        btnMobile.addEventListener('click', () => {
-            menuMobile.classList.toggle('hidden');
-        });
-
-        // Fechar menu ao clicar
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => menuMobile.classList.add('hidden'));
-        });
+        btnMobile.addEventListener('click', () => menuMobile.classList.toggle('hidden'));
+        document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => menuMobile.classList.add('hidden')));
 
         // Navbar Shadow
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 10) navbar.classList.add('shadow-md');
-            else navbar.classList.remove('shadow-md');
+            navbar.classList.toggle('shadow-md', window.scrollY > 10);
         });
 
-        // Back to Top
+        // Toggle "Saiba Mais" nos Serviços
+        function toggleService(id, btn) {
+            const content = document.getElementById(id);
+            const isHidden = content.classList.contains('max-h-0');
+            
+            // Fecha todos primeiro (opcional, remova se quiser abrir múltiplos)
+            document.querySelectorAll('.service-details').forEach(el => {
+                el.classList.add('max-h-0', 'opacity-0');
+                el.classList.remove('max-h-96', 'opacity-100');
+            });
+
+            if (isHidden) {
+                content.classList.remove('max-h-0', 'opacity-0');
+                content.classList.add('max-h-96', 'opacity-100');
+                // btn.querySelector('span').innerText = "Ver Menos";
+            } else {
+                content.classList.add('max-h-0', 'opacity-0');
+                content.classList.remove('max-h-96', 'opacity-100');
+                // btn.querySelector('span').innerText = "Saiba Mais";
+            }
+        }
+
+        // Floating Buttons & Intersection Observer (Esconder no Footer)
+        const footer = document.getElementById('main-footer');
+        const floatBtns = document.getElementById('floating-buttons');
         const backToTopBtn = document.getElementById('back-to-top');
+
+        // Observer para esconder quando chegar no footer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    floatBtns.classList.add('opacity-0', 'pointer-events-none');
+                } else {
+                    floatBtns.classList.remove('opacity-0', 'pointer-events-none');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        if(footer) observer.observe(footer);
+
+        // Scroll Logic para o Back to Top
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) backToTopBtn.classList.remove('translate-y-20', 'opacity-0');
-            else backToTopBtn.classList.add('translate-y-20', 'opacity-0');
-        });
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
         });
 
-        // Modals Logic
+        backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Modais e Cookies
         function openModal(id) {
             document.getElementById('modal-backdrop').classList.remove('hidden');
             document.getElementById('modal-' + id).classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Previne scroll
+            document.body.style.overflow = 'hidden';
         }
-
         function closeModal() {
             document.getElementById('modal-backdrop').classList.add('hidden');
             document.querySelectorAll('[id^="modal-"]').forEach(el => {
@@ -656,15 +568,11 @@
             });
             document.body.style.overflow = 'auto';
         }
-
-        // Cookie Banner Logic
+        
         const cookieBanner = document.getElementById('cookie-banner');
         if (!localStorage.getItem('cookiesAccepted')) {
-            setTimeout(() => {
-                cookieBanner.classList.remove('hidden', 'translate-y-full');
-            }, 2000);
+            setTimeout(() => cookieBanner.classList.remove('hidden', 'translate-y-full'), 2000);
         }
-
         function acceptCookies() {
             localStorage.setItem('cookiesAccepted', 'true');
             cookieBanner.classList.add('translate-y-full');
