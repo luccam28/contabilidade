@@ -3,25 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="ContaPro: Assessoria contábil consultiva para PMEs. Abertura de empresas, BPO Financeiro e Planejamento Tributário.">
-    <meta name="author" content="ContaPro Assessoria Contábil">
-    <meta name="theme-color" content="#1e40af">
+    <meta name="description" content="M. Furtado Contabilidade: Especialistas em contabilidade empresarial e VETCont - solução exclusiva para clínicas veterinárias e pet shops na Região dos Lagos/RJ.">
+    <title>M. Furtado Contabilidade | Inteligência Contábil & VETCont</title>
 
-    <meta property="og:title" content="ContaPro | Contabilidade Consultiva">
-    <meta property="og:description" content="Deixe a burocracia conosco e foque no crescimento do seu negócio.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://contapro.com">
-    <meta property="og:image" content="https://placehold.co/1200x630/1e40af/ffffff?text=ContaPro+Assessoria">
-
-    <title>ContaPro | Contabilidade Consultiva</title>
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%231e40af%22/><text y=%22.9em%22 x=%22.5em%22 font-family=%22sans-serif%22 font-weight=%22bold%22 font-size=%2270%22 fill=%22white%22>C</text></svg>">
-
+    <link rel="icon" type="image/png" href="logo-cont(1).png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -34,18 +24,25 @@
                     },
                     colors: {
                         brand: {
-                            50: '#eff6ff',
-                            100: '#dbeafe',
-                            500: '#3b82f6',
-                            600: '#2563eb',
-                            700: '#1d4ed8',
-                            800: '#1e40af',
-                            900: '#1e3a8a',
+                            50: '#f1f5f9',
+                            100: '#e2e8f0',
+                            600: '#1e3a8a',
+                            700: '#1e293b',
+                            800: '#0f172a',
+                            900: '#020617',
                         },
-                        whatsapp: '#25D366',
+                        vet: {
+                            DEFAULT: '#0d9488',
+                            light: '#2dd4bf',
+                            dark: '#115e59'
+                        }
                     },
                     boxShadow: {
-                        'soft': '0 10px 40px -10px rgba(0,0,0,0.08)',
+                        'premium': '0 20px 50px -12px rgba(15, 23, 42, 0.15)',
+                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 2s infinite'
                     }
                 }
             }
@@ -53,530 +50,534 @@
     </script>
 
     <style>
-        *:focus-visible { outline: 2px solid #2563eb; outline-offset: 4px; }
-        .fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; transform: translateY(20px); }
-        .delay-200 { animation-delay: 0.2s; }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(2, 6, 23, 0.95) 0%, rgba(30, 58, 138, 0.85) 100%);
+        }
         .text-gradient {
-            background-clip: text;
+            background: linear-gradient(to right, #ffffff, #e2e8f0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-image: linear-gradient(to right, #1d4ed8, #059669);
         }
-
-        .pulse-whatsapp {
-            box-shadow: 0 0 0 0 rgba(37, 211, 102, 1);
-            animation: pulse-green 2s infinite;
+        .card-premium {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        @keyframes pulse-green {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        .card-premium:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
         }
-
-        /* Transição suave para o card expandir */
-        .service-details {
-            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #1e3a8a;
+            transition: width 0.3s ease;
+        }
+        .nav-link-hover:hover::after {
+            width: 100%;
+        }
+        .hero-bg {
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
         }
     </style>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AccountingService",
-        "name": "ContaPro Assessoria Contábil",
-        "image": "https://contapro.com/logo.png",
-        "telephone": "+5511999999999",
-        "url": "https://contapro.com",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Av. Paulista, 1000",
-            "addressLocality": "São Paulo",
-            "addressRegion": "SP",
-            "postalCode": "01310-100",
-            "addressCountry": "BR"
-        },
-        "priceRange": "$$"
-    }
-    </script>
 </head>
-<body class="font-sans text-gray-600 bg-gray-50 antialiased overflow-x-hidden" id="home">
+<body class="bg-slate-50 text-slate-800 antialiased font-sans">
 
-    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300" id="navbar">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="#home" class="flex items-center gap-2 group" aria-label="ContaPro Início">
-                    <div class="w-10 h-10 bg-brand-700 rounded-xl flex items-center justify-center text-white font-heading font-bold text-xl shadow-lg group-hover:scale-105 transition-transform">
-                        CP
-                    </div>
-                    <span class="text-2xl font-heading font-bold text-gray-900 tracking-tight">Conta<span class="text-brand-600">Pro</span></span>
-                </a>
-
-                <nav class="hidden md:flex items-center gap-8 uppercase text-xs font-bold tracking-wide" role="navigation">
-                    <a href="#home" class="text-gray-600 hover:text-brand-700 transition-colors">Home</a>
-                    <a href="#sobre" class="text-gray-600 hover:text-brand-700 transition-colors">A Empresa</a>
-                    <a href="#servicos" class="text-gray-600 hover:text-brand-700 transition-colors">Serviços</a>
-                    <a href="#clientes" class="text-gray-600 hover:text-brand-700 transition-colors">Clientes</a>
-                    <a href="#depoimentos" class="text-gray-600 hover:text-brand-700 transition-colors">Depoimentos</a>
-                    <a href="#contato" class="text-gray-600 hover:text-brand-700 transition-colors">Contato</a>
-                </nav>
-
-                <div class="hidden md:block">
-                    <a href="https://wa.me/5511999999999" target="_blank" class="flex items-center gap-2 px-6 py-2.5 bg-whatsapp text-white text-sm font-semibold rounded-lg hover:bg-green-600 transition-all shadow-lg hover:shadow-green-500/30">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                        Falar com Contador
-                    </a>
+    <header class="fixed w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-22 py-4">
+                <div onclick="window.location.reload()" class="flex items-center space-x-3 group cursor-pointer">
+                    <img src="logo-cont(1).png" alt="M. Furtado Logo" class="h-14 w-auto drop-shadow-sm group-hover:scale-105 transition-transform">
                 </div>
 
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600 hover:text-brand-700 focus:outline-none" aria-label="Menu">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </div>
-        </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="nav-link-hover text-sm font-bold text-slate-700 hover:text-brand-600 transition-colors uppercase tracking-widest">Home</a>
+                    <a href="#sobre" class="nav-link-hover text-sm font-bold text-slate-700 hover:text-brand-600 transition-colors uppercase tracking-widest">Sobre</a>
+                    <a href="#servicos" class="nav-link-hover text-sm font-bold text-slate-700 hover:text-brand-600 transition-colors uppercase tracking-widest">Serviços</a>
+                    <a href="#depoimentos" class="nav-link-hover text-sm font-bold text-slate-700 hover:text-brand-600 transition-colors uppercase tracking-widest">Depoimentos</a>
+                    <a href="vet-cont.html" class="flex items-center text-sm font-bold text-vet hover:text-vet-dark transition-colors uppercase tracking-widest bg-vet/5 px-4 py-2 rounded-full border border-vet/10">
+                        <span class="mr-2">🐾</span> VetCont
+                    </a>
+                    <a href="#contato" class="bg-brand-600 text-white px-6 py-3 rounded-md font-bold text-sm uppercase tracking-widest hover:bg-brand-800 hover:shadow-lg transition-all active:scale-95">
+                        Contato
+                    </a>
+                </nav>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
-            <div class="flex flex-col p-4 space-y-4 uppercase text-sm font-bold">
-                <a href="#home" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">Home</a>
-                <a href="#sobre" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">A Empresa</a>
-                <a href="#servicos" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">Serviços</a>
-                <a href="#clientes" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">Clientes</a>
-                <a href="#depoimentos" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">Depoimentos</a>
-                <a href="#contato" class="block px-4 py-2 text-gray-700 hover:bg-brand-50 hover:text-brand-700 rounded-lg">Contato</a>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-slate-100 text-brand-900">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
             </div>
         </div>
     </header>
 
-    <main class="pt-20">
-        <section class="relative pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
-            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-[600px] h-[600px] bg-brand-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
-            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-[400px] h-[400px] bg-green-50 rounded-full blur-3xl opacity-50 pointer-events-none"></div>
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8">
+        <button id="close-menu" class="absolute top-8 right-8 text-slate-400"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        <a href="#inicio" class="text-2xl font-bold text-brand-900 uppercase tracking-widest">Home</a>
+        <a href="#sobre" class="text-2xl font-bold text-brand-900 uppercase tracking-widest">Sobre</a>
+        <a href="#servicos" class="text-2xl font-bold text-brand-900 uppercase tracking-widest">Serviços</a>
+        <a href="#depoimentos" class="text-2xl font-bold text-brand-900 uppercase tracking-widest">Depoimentos</a>
+        <a href="vet-cont.html" class="text-2xl font-bold text-vet underline uppercase tracking-widest">Área VET</a>
+        <a href="#contato" class="px-8 py-4 bg-brand-600 text-white rounded-md font-bold uppercase tracking-widest">Fale Conosco</a>
+    </div>
 
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                    
-                    <div class="lg:w-1/2 text-center lg:text-left fade-in-up">
-                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wide mb-6">
-                            <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                            Contabilidade Consultiva & Digital
-                        </div>
-                        
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-gray-900 leading-[1.15] mb-6">
-                            Mais que contadores, <br>
-                            <span class="text-gradient">parceiros do seu lucro</span>.
-                        </h1>
-                        
-                        <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            Chega de falar "contabilês". Na ContaPro, cuidamos da burocracia para que você tenha tempo de fazer o que sabe de melhor: <strong>empreender.</strong>
-                        </p>
-                        
-                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                            <a href="https://wa.me/5511999999999" target="_blank" class="w-full sm:w-auto px-8 py-4 bg-whatsapp text-white font-bold rounded-xl hover:bg-green-600 transition-all shadow-lg hover:shadow-green-500/30 text-center flex items-center justify-center gap-2">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                                Falar com Especialista
-                            </a>
-                            <a href="#servicos" class="w-full sm:w-auto px-8 py-4 bg-white text-gray-700 border border-gray-200 font-semibold rounded-xl hover:bg-gray-50 hover:border-brand-200 hover:text-brand-700 transition-all text-center">
-                                Conhecer Serviços
-                            </a>
-                        </div>
-                    </div>
+    <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0 hero-bg">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+        
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-blue-900/30 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-900/50 rounded-full blur-[120px]"></div>
 
-                    <div class="lg:w-1/2 w-full fade-in-up delay-200">
-                        <div class="relative mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Equipe ContaPro em reunião" class="w-full h-auto object-cover">
-                        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full">
+                        <span class="flex h-2 w-2 rounded-full bg-blue-400 animate-pulse"></span>
+                        <span class="text-slate-200 text-xs font-bold uppercase tracking-widest">Contabilidade Consultiva Região dos Lagos</span>
                     </div>
-                </div>
-
-                <div id="clientes" class="mt-20 pt-10 border-t border-gray-100 text-center">
-                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-6">Confiança de mais de 500 PMEs modernas</p>
-                    <div class="flex flex-wrap justify-center items-center gap-8 lg:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                        <span class="text-xl font-heading font-bold text-gray-800">Tech<span class="text-blue-600">Corp</span></span>
-                        <span class="text-xl font-heading font-bold text-gray-800">Agro<span class="text-green-600">Leaf</span></span>
-                        <span class="text-xl font-heading font-bold text-gray-800">Studio<span class="text-purple-600">Design</span></span>
-                        <span class="text-xl font-heading font-bold text-gray-800">Varejo<span class="text-orange-600">Express</span></span>
-                        <span class="text-xl font-heading font-bold text-gray-800">Nova<span class="text-cyan-600">Saúde</span></span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="sobre" class="py-20 bg-brand-900 text-white relative overflow-hidden">
-            <svg class="absolute top-0 left-0 text-brand-800 w-64 h-64 opacity-50 transform -translate-x-1/2 -translate-y-1/2" viewBox="0 0 100 100" fill="currentColor"><circle cx="50" cy="50" r="50"/></svg>
-            
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="flex flex-col lg:flex-row items-center gap-16">
-                    <div class="lg:w-1/2">
-                        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6 leading-tight">
-                            Uma história construída com <br><span class="text-green-400">integridade e proximidade</span>.
-                        </h2>
-                        <p class="text-brand-100 text-lg mb-6 leading-relaxed">
-                            A ContaPro não é um robô. Somos um time de especialistas apaixonados por empreendedorismo. Fundada em 2015, nascemos com a missão de traduzir a complexa legislação brasileira em oportunidades.
-                        </p>
-                        
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-center gap-3">
-                                <span class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-brand-900 font-bold text-xs">✓</span>
-                                <span class="font-medium text-white">Atendimento via WhatsApp (sem tickets chatos)</span>
-                            </li>
-                            <li class="flex items-center gap-3">
-                                <span class="w-6 h-6 rounded-full bg-green-500 flex items-center justify-center text-brand-900 font-bold text-xs">✓</span>
-                                <span class="font-medium text-white">Reuniões periódicas de alinhamento</span>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="lg:w-1/2 grid grid-cols-2 gap-6">
-                        <div class="bg-brand-800 p-6 rounded-2xl border border-brand-700">
-                            <div class="text-4xl font-bold text-green-400 mb-2">+10 Anos</div>
-                            <div class="text-sm text-brand-200">De experiência</div>
-                        </div>
-                        <div class="bg-brand-800 p-6 rounded-2xl border border-brand-700 mt-8">
-                            <div class="text-4xl font-bold text-green-400 mb-2">+800</div>
-                            <div class="text-sm text-brand-200">Empresas abertas</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="servicos" class="py-20 bg-white" aria-label="Nossos Serviços">
-            <div class="container mx-auto px-4">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-                        Soluções completas para sua <br><span class="text-brand-700">tranquilidade fiscal</span>
-                    </h2>
-                    <p class="text-lg text-gray-600">
-                        Clique nos cards para saber mais.
+                    <h1 class="font-heading text-5xl md:text-7xl font-extrabold text-white leading-[1.1]">
+                        Inteligência que <span class="text-gradient">impulsiona</span> seu lucro.
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
+                        Mais que burocracia, entregamos estratégia. Especialistas em gestão fiscal, tributária e contabilidade focada no setor veterinário em toda a Região dos Lagos.
                     </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
-                    
-                    <div class="h-full p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 flex flex-col">
-                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-brand-600 mb-6">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Abertura de Empresa</h3>
-                        <p class="text-gray-600 text-sm mb-4">Seu CNPJ ativo em tempo recorde e sem burocracia.</p>
-                        
-                        <div id="desc-abertura" class="service-details max-h-0 overflow-hidden opacity-0">
-                            <p class="text-gray-500 text-sm mb-4 pt-2 border-t border-gray-200">
-                                Cuidamos de todo o processo na Junta Comercial, Receita e Prefeitura. Orientamos sobre a melhor natureza jurídica para você pagar menos impostos legalmente desde o dia 1.
-                            </p>
-                        </div>
-                        
-                        <button onclick="toggleService('desc-abertura', this)" class="mt-auto text-brand-600 font-bold text-sm hover:underline flex items-center gap-1 group">
-                            <span>Saiba Mais</span>
-                            <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
+                    <div class="flex flex-col sm:flex-row gap-5">
+                        <a href="https://wa.me/5522998792653" target="_blank" class="flex items-center justify-center px-10 py-5 bg-white text-brand-900 font-extrabold rounded-md hover:bg-slate-100 transition-all shadow-xl hover:-translate-y-1 active:scale-95 group uppercase text-sm tracking-widest">
+                            Falar com Especialista
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                        <a href="#servicos" class="flex items-center justify-center px-10 py-5 bg-transparent border border-white/30 text-white font-bold rounded-md hover:bg-white/5 transition-all uppercase text-sm tracking-widest">
+                            Nossas Soluções
+                        </a>
                     </div>
-
-                    <div class="h-full p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 flex flex-col">
-                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    <div class="flex items-center space-x-6 pt-8 border-t border-white/10">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-brand-800 border-2 border-brand-900 flex items-center justify-center text-[10px] text-white font-bold">+100</div>
+                            <div class="w-10 h-10 rounded-full bg-slate-500 border-2 border-brand-900"></div>
+                            <div class="w-10 h-10 rounded-full bg-slate-600 border-2 border-brand-900"></div>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Migrar MEI para ME</h3>
-                        <p class="text-gray-600 text-sm mb-4">Cresceu? Nós fazemos o desenquadramento com segurança.</p>
-                        
-                        <div id="desc-mei" class="service-details max-h-0 overflow-hidden opacity-0">
-                            <p class="text-gray-500 text-sm mb-4 pt-2 border-t border-gray-200">
-                                Quando você fatura mais de R$ 81k, é hora de virar Microempresa. Ajustamos sua tributação para o Simples Nacional, garantindo conformidade e permitindo contratações.
-                            </p>
-                        </div>
-                        
-                        <button onclick="toggleService('desc-mei', this)" class="mt-auto text-brand-600 font-bold text-sm hover:underline flex items-center gap-1 group">
-                            <span>Saiba Mais</span>
-                            <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                    </div>
-
-                    <div class="h-full p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 flex flex-col">
-                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center text-purple-600 mb-6">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Imposto de Renda</h3>
-                        <p class="text-gray-600 text-sm mb-4">Declaração PF e PJ sem sustos com a malha fina.</p>
-                        
-                        <div id="desc-ir" class="service-details max-h-0 overflow-hidden opacity-0">
-                            <p class="text-gray-500 text-sm mb-4 pt-2 border-t border-gray-200">
-                                Análise cruzada de dados bancários e patrimoniais. Fazemos a declaração anual dos sócios e da empresa, garantindo que você pague apenas o justo ou receba a restituição devida.
-                            </p>
-                        </div>
-                        
-                        <button onclick="toggleService('desc-ir', this)" class="mt-auto text-brand-600 font-bold text-sm hover:underline flex items-center gap-1 group">
-                            <span>Saiba Mais</span>
-                            <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                    </div>
-
-                    <div class="h-full p-8 rounded-2xl bg-gray-50 hover:bg-white hover:shadow-soft transition-all duration-300 border border-gray-100 flex flex-col">
-                        <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center text-pink-600 mb-6">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path></svg>
-                        </div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Certificado Digital</h3>
-                        <p class="text-gray-600 text-sm mb-4">Emissão de e-CNPJ e e-CPF com rapidez.</p>
-                        
-                        <div id="desc-cert" class="service-details max-h-0 overflow-hidden opacity-0">
-                            <p class="text-gray-500 text-sm mb-4 pt-2 border-t border-gray-200">
-                                Essencial para emitir notas e assinar documentos. Oferecemos suporte na compra e instalação do seu certificado A1 ou A3, por videoconferência ou presencial.
-                            </p>
-                        </div>
-                        
-                        <button onclick="toggleService('desc-cert', this)" class="mt-auto text-brand-600 font-bold text-sm hover:underline flex items-center gap-1 group">
-                            <span>Saiba Mais</span>
-                            <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </button>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="depoimentos" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
-                        O que dizem nossos <span class="text-brand-700">clientes</span>
-                    </h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        A satisfação de quem confia a gestão da empresa à ContaPro.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full">
-                        <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                        <blockquote class="text-gray-600 mb-6 flex-grow">
-                            "Eu tinha medo de trocar de contador, mas a migração para a ContaPro foi tranquila. Economizei 15% já no primeiro mês."
-                        </blockquote>
-                        <div class="font-bold text-gray-900">Mariana Costa</div>
-                        <div class="text-sm text-gray-500">Sócia, Costa & Silva Arquitetura</div>
-                    </div>
-
-                    <div class="bg-white p-8 rounded-2xl shadow-md border border-brand-100 transform md:-translate-y-4 flex flex-col h-full relative">
-                        <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                        <blockquote class="text-gray-600 mb-6 flex-grow">
-                            "O atendimento deles no WhatsApp é incrível. Respondem rápido e explicam tudo sem termos difíceis."
-                        </blockquote>
-                        <div class="font-bold text-gray-900">Ricardo Silva</div>
-                        <div class="text-sm text-gray-500">CEO, TechStart</div>
-                    </div>
-
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full">
-                        <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                        <blockquote class="text-gray-600 mb-6 flex-grow">
-                            "Abriram minha empresa em 2 dias. Tudo digital. Recomendo para todo mundo que quer agilidade."
-                        </blockquote>
-                        <div class="font-bold text-gray-900">Ana Lima</div>
-                        <div class="text-sm text-gray-500">Dentista</div>
+                        <p class="text-sm text-slate-400">Empresas que confiam na nossa gestão</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="contato" class="py-20 bg-gray-50" aria-label="Entre em contato">
-            <div class="container mx-auto px-4">
-                <div class="max-w-5xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden flex flex-col md:flex-row">
-                    <div class="bg-brand-800 p-10 md:w-1/2 text-white flex flex-col justify-between">
-                        <div>
-                            <h3 class="text-2xl font-bold mb-4">Fale Conosco</h3>
-                            <p class="text-brand-100 mb-8">Estamos prontos para ouvir seus desafios.</p>
-                            
-                            <div class="space-y-6">
-                                <div class="flex items-start gap-4">
-                                    <div class="w-10 h-10 bg-brand-700 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">WhatsApp & Telefone</h4>
-                                        <p class="text-brand-100">(11) 99999-9999</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start gap-4">
-                                    <div class="w-10 h-10 bg-brand-700 rounded-full flex items-center justify-center flex-shrink-0">
-                                        <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-bold">E-mail</h4>
-                                        <p class="text-brand-100">contato@contapro.com</p>
-                                    </div>
-                                </div>
+                
+                <div class="hidden lg:block relative">
+                    <div class="relative z-10 bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-xl shadow-2xl">
+                        <img src="hero.png" alt="Business Intelligence" class="rounded-lg shadow-inner grayscale-[0.1] hover:grayscale-0 transition-all duration-700 object-cover h-[500px] w-full">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-lg shadow-premium z-20 animate-bounce-slow border-l-4 border-brand-600">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-blue-50 p-3 rounded-full text-brand-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Redução de Impostos</p>
+                                <p class="text-xl font-heading font-extrabold text-slate-900">Até 35% Economia</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="p-10 md:w-1/2 flex items-center justify-center bg-gray-50">
-                        <div class="text-center w-full">
-                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600 animate-pulse">
-                                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-900 mb-2">Atendimento Rápido</h3>
-                            <a href="https://wa.me/5511999999999" target="_blank" class="inline-block w-full py-4 px-6 bg-whatsapp text-white font-bold text-lg rounded-xl hover:bg-green-600 transition-all shadow-xl hover:shadow-green-500/40 transform hover:-translate-y-1">
-                                Iniciar Conversa
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800" id="main-footer">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="col-span-1 md:col-span-2">
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 bg-brand-700 rounded-lg flex items-center justify-center text-white font-bold shadow-lg">CP</div>
-                        <span class="text-xl font-bold text-white">Conta<span class="text-brand-500">Pro</span></span>
-                    </div>
-                    <p class="text-sm leading-relaxed max-w-xs">
-                        Assessoria contábil moderna, feita de pessoas para pessoas.
-                    </p>
+    <section class="py-12 bg-slate-50 relative z-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white shadow-premium rounded-xl p-8 -mt-24 border border-slate-200/60">
+                <div class="text-center md:border-r border-slate-100">
+                    <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">10+</p>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Anos de Mercado</p>
                 </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Legal</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><button onclick="openModal('terms')" class="hover:text-white transition-colors text-left">Termos de Uso</button></li>
-                        <li><button onclick="openModal('privacy')" class="hover:text-white transition-colors text-left">Política de Privacidade</button></li>
-                        <li><button onclick="openModal('cookies-policy')" class="hover:text-white transition-colors text-left">Política de Cookies</button></li>
+                <div class="text-center md:border-r border-slate-100">
+                    <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">200+</p>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Clientes Ativos</p>
+                </div>
+                <div class="text-center md:border-r border-slate-100">
+                    <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">R$ 5M+</p>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Impostos Recuperados</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">100%</p>
+                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Foco no Cliente</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-100 rounded-lg z-0"></div>
+                        <img src="m-furtado.png" alt="Equipe M Furtado" class="relative z-10 rounded-lg shadow-premium border border-slate-100">
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-100 rounded-lg z-0"></div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 space-y-6">
+                    <h2 class="font-heading text-4xl font-extrabold text-slate-900 leading-tight">
+                        Comprometimento com a sua <span class="text-brand-600">segurança financeira</span>.
+                    </h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        A M. Furtado Contabilidade nasceu com o propósito de desmistificar a contabilidade tradicional. Localizados em Cabo Frio e atendendo toda a Região dos Lagos, combinamos tecnologia de ponta com um atendimento humanizado e consultivo.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                            </div>
+                            <span class="text-slate-700 font-medium">Equipe técnica altamente qualificada e atualizada.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                            </div>
+                            <span class="text-slate-700 font-medium">Foco em redução de custos e otimização tributária.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                            </div>
+                            <span class="text-slate-700 font-medium">Especialistas no segmento veterinário e pet shops.</span>
+                        </li>
                     </ul>
                 </div>
             </div>
-            
-            <div class="border-t border-gray-800 pt-8 flex flex-col items-center text-xs text-center space-y-2">
-                <p>&copy; 2026 ContaPro Solutions Ltda • CNPJ 50.213.863/0001-15 - Desenvolvido por <a href="https://redesigner.com.br" target="_blank" class="text-white hover:text-brand-500 underline decoration-dotted">REDESIGNER PPM</a></p>
-                <p>Feito com ❤️ para quem ama empreender.</p>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-brand-600 font-bold uppercase tracking-widest text-xs">Especialidades</span>
+                <h2 class="font-heading text-4xl font-extrabold text-slate-900 mt-3 mb-6">Soluções feitas para o seu crescimento</h2>
+                <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-10 rounded-xl shadow-premium card-premium border border-slate-100">
+                    <div class="w-16 h-16 bg-slate-50 rounded-lg flex items-center justify-center text-brand-600 mb-8 border border-slate-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-extrabold text-slate-900 mb-4">Contabilidade Geral</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Processamento contábil preciso para empresas de todos os portes, garantindo conformidade total com a legislação.</p>
+                    <ul class="space-y-2 mb-8 text-sm font-semibold text-slate-500">
+                        <li class="flex items-center"><span class="mr-2 text-brand-600">✓</span> Balancetes mensais</li>
+                        <li class="flex items-center"><span class="mr-2 text-brand-600">✓</span> Demonstrações de lucro</li>
+                    </ul>
+                </div>
+
+                <div class="bg-brand-900 p-10 rounded-xl shadow-2xl card-premium relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-125 transition-transform duration-700">
+                        <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-8 shadow-lg border border-white/10 overflow-hidden">
+                            <img src="logo-cont.png" alt="Logo VetCont" class="w-full h-full object-contain p-1">
+                        </div>
+                        <h3 class="font-heading text-2xl font-extrabold text-white mb-4">VETCont</h3>
+                        <p class="text-slate-300 leading-relaxed mb-8">Nossa solução exclusiva para o setor Pet. Planejamento tributário específico que reduz drasticamente seus impostos.</p>
+                        <a href="vet-cont.html" class="inline-flex items-center px-6 py-3 bg-white text-brand-900 font-bold rounded-md hover:bg-slate-100 transition-colors group uppercase text-xs tracking-widest">
+                            Conhecer VETCont
+                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-white p-10 rounded-xl shadow-premium card-premium border border-slate-100">
+                    <div class="w-16 h-16 bg-slate-50 rounded-lg flex items-center justify-center text-brand-600 mb-8 border border-slate-100">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-extrabold text-slate-900 mb-4">Recuperação Tributária</h3>
+                    <p class="text-slate-600 leading-relaxed mb-6">Análise profunda dos últimos 5 anos para identificar impostos pagos a maior e solicitar a restituição para seu caixa.</p>
+                    <div class="bg-green-50 text-green-800 p-4 rounded-lg text-sm font-bold flex items-center border border-green-100">
+                        <span class="mr-2">💰</span> Ideal para empresas no Simples Nacional.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="depoimentos py-24 bg-white overflow-hidden border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+                <div class="max-w-2xl">
+                    <span class="text-brand-600 font-bold uppercase tracking-widest text-xs">Testemunhos</span>
+                    <h2 class="font-heading text-4xl font-extrabold text-slate-900 mt-3 leading-tight">
+                        A confiança de quem <br>decidiu <span class="text-brand-600">crescer com segurança</span>
+                    </h2>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="swiper-button-prev-custom w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all hover:border-brand-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button class="swiper-button-next-custom w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all hover:border-brand-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="swiper testimonialSwiper pb-12">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide h-auto">
+                        <div class="bg-slate-50 p-8 md:p-10 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full flex flex-col border border-slate-100">
+                            <div class="flex text-yellow-500 mb-6">★★★★★</div>
+                            <p class="text-slate-600 text-lg leading-relaxed italic mb-8 flex-grow">
+                                "Sempre achei que pagava muito imposto, mas não sabia como mudar. A M. Furtado fez uma revisão completa e conseguimos recuperar créditos que nem imaginávamos. O atendimento é impecável e muito técnico."
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-700">RC</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 leading-none">Ricardo Camargo</h4>
+                                    <p class="text-sm text-slate-500 mt-1">Sócio-Diretor, Logística Lagos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide h-auto">
+                        <div class="bg-brand-800 p-8 md:p-10 rounded-xl shadow-2xl h-full flex flex-col relative overflow-hidden text-white border border-brand-700">
+                            <div class="absolute top-6 right-8 text-6xl text-white/10 font-serif">"</div>
+                            <div class="flex text-vet-light mb-6 font-bold uppercase text-sm tracking-widest">🐾 Especialidade VET</div>
+                            <p class="text-slate-300 text-lg leading-relaxed italic mb-8 flex-grow">
+                                "Como veterinária, minha paixão é cuidar dos pets, a gestão era um pesadelo. Com o VETCont, hoje tenho total clareza dos meus custos e reduzi minha carga tributária drasticamente. Essencial para clínicas!"
+                            </p>
+                            <div class="flex items-center space-x-4 border-t border-white/10 pt-6">
+                                <div class="w-12 h-12 bg-vet rounded-full flex items-center justify-center font-bold text-white">AM</div>
+                                <div>
+                                    <h4 class="font-bold text-white leading-none">Dra. Ana Mendes</h4>
+                                    <p class="text-sm text-slate-400 mt-1">Proprietária, Centro Vet Popular</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide h-auto">
+                        <div class="bg-slate-50 p-8 md:p-10 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full flex flex-col border border-slate-100">
+                            <div class="flex text-yellow-500 mb-6">★★★★★</div>
+                            <p class="text-slate-600 text-lg leading-relaxed italic mb-8 flex-grow">
+                                "Trabalhamos com a M. Furtado há 5 anos. O que mais valorizo é a proatividade. Eles não esperam o problema acontecer, eles nos avisam antes e sugerem a melhor rota estratégica. Parceiros de verdade."
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-700">FL</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 leading-none">Fabrício Lemos</h4>
+                                    <p class="text-sm text-slate-500 mt-1">CEO, Inova Tech Group</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination !-bottom-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-24 bg-brand-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600 rounded-full -mr-64 -mt-64 blur-[120px]"></div>
+            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900 rounded-full -ml-64 -mb-64 blur-[120px]"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="bg-white/95 backdrop-blur-md rounded-xl p-8 md:p-20 shadow-2xl flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-5/12 space-y-8">
+                    <div>
+                        <span class="inline-block py-1 px-4 rounded-full bg-brand-100 text-brand-800 text-xs font-bold uppercase tracking-widest mb-6">
+                            Atendimento Imediato
+                        </span>
+                        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                            Vamos construir o <span class="text-brand-600">próximo capítulo</span> do seu sucesso?
+                        </h2>
+                    </div>
+                    
+                    <p class="text-slate-600 text-xl leading-relaxed">
+                        Estamos prontos para otimizar sua gestão. Escolha o canal de sua preferência e fale com um especialista agora mesmo.
+                    </p>
+
+                    <div class="pt-6">
+                        <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Siga nossa inteligência contábil</p>
+                        <div class="flex space-x-4">
+                            
+                            <a href="https://www.instagram.com/m.furtadocontabilidade/" target="_blank" 
+                            class="w-14 h-14 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-[#E1306C] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm">
+                                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.947.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/monique-furtado-479aab189" target="_blank" 
+                            class="w-14 h-14 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-[#0077b5] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm">
+                                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-7/12 grid sm:grid-cols-2 gap-6 w-full">
+                    <a href="https://wa.me/5522998792653" class="group p-8 rounded-xl bg-green-600 text-white shadow-xl hover:shadow-green-500/20 hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-14 h-14 bg-white/20 rounded-lg flex items-center justify-center mb-12">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-2">WhatsApp</h3>
+                        <p class="text-white/80 text-sm mb-6">Resposta imediata para urgências e orçamentos.</p>
+                        <span class="inline-flex items-center font-bold text-white group-hover:translate-x-2 transition-transform">
+                            Iniciar conversa <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+
+                    <div class="group p-8 rounded-xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center mb-12">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Telefone</h3>
+                        <p class="text-slate-500 text-sm mb-6">Fale diretamente com nossa central em Cabo Frio.</p>
+                        <p class="font-heading text-xl font-extrabold text-brand-900">(22) 99719-4100</p>
+                    </div>
+
+                    <div class="sm:col-span-2 group p-8 rounded-xl bg-brand-800 text-white shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border border-brand-700">
+                        <div class="flex items-center space-x-6">
+                            <div class="w-14 h-14 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-xl font-bold">Nossa Localização</h3>
+                                <p class="text-slate-400">Atendimento presencial e consultoria estratégica em Cabo Frio - RJ</p>
+                            </div>
+                        </div>
+                        <a href="https://maps.google.com" target="_blank" class="px-8 py-4 bg-white/10 hover:bg-white/20 rounded-md font-bold transition-colors text-center uppercase text-sm tracking-wider">
+                            Ver no Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed bottom-8 right-8 z-50 flex flex-col space-y-4">
+        <a href="https://wa.me/5522998792653" target="_blank" class="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+        </a>
+    </div>
+
+    <footer class="bg-brand-900 pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2">
+                    <img src="logo-cont(1).png" alt="Logo" class="h-16 mb-6 brightness-0 invert opacity-90">
+                    <p class="text-slate-400 max-w-sm mb-6">
+                        Excelência em serviços contábeis e consultoria empresarial. Nossa missão é ser o pilar de crescimento seguro para sua empresa.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-600 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a>
+                        <a href="https://www.instagram.com/m.furtadocontabilidade/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-600 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.351-.2 6.78-2.618 6.981-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.352-2.618-6.78-6.98-6.981C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 10.001 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Links Rápidos</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="#inicio" class="hover:text-brand-600">Home</a></li>
+                        <li><a href="#sobre" class="hover:text-brand-600">Nossa História</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-600">Serviços</a></li>
+                        <li><a href="vet-cont.html" class="hover:text-vet-light">VETCont</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Área Legal</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="privacidade.html" class="hover:text-brand-600">Privacidade</a></li>
+                        <li><a href="termos.html" class="hover:text-brand-600">Termos de Uso</a></li>
+                        <li><a href="lgpd.html" class="hover:text-brand-600">LGPD</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-center">
+                <p class="text-slate-500 text-xs tracking-widest">
+                    &copy; 2026 M.Furtado Contabilidade - Todos os direitos reservados - Desenvolvido por <a href="https://redesigner.com.br" class="font-bold hover:text-white transition-colors" target="_blank">REDESIGNER PPM.</a>
+                </p>
             </div>
         </div>
     </footer>
 
-    <div id="floating-buttons" class="fixed bottom-6 right-6 z-40 flex flex-col gap-4 items-end transition-opacity duration-300">
-        
-        <a href="https://wa.me/5511999999999" target="_blank" class="flex items-center justify-center w-14 h-14 bg-whatsapp text-white rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 pulse-whatsapp group" aria-label="Falar no WhatsApp">
-            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        </a>
-
-        <button id="back-to-top" class="bg-brand-600 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center hover:bg-brand-700 focus:outline-none" aria-label="Voltar ao topo">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-        </button>
-    </div>
-
-    <div id="cookie-banner" class="fixed bottom-0 w-full bg-white border-t border-gray-200 shadow-2xl p-4 z-50 hidden md:flex justify-between items-center transform translate-y-full transition-transform duration-500">
-        <div class="text-sm text-gray-600 max-w-2xl">
-            Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa 
-            <button onclick="openModal('privacy')" class="text-brand-600 underline">Política de Privacidade</button>.
-        </div>
-        <div class="flex gap-4 mt-4 md:mt-0">
-            <button onclick="acceptCookies()" class="px-6 py-2 bg-brand-700 text-white text-sm font-bold rounded-lg hover:bg-brand-800">Aceitar</button>
-        </div>
-    </div>
-
-    <div id="modal-backdrop" class="fixed inset-0 bg-black/50 z-[60] hidden backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
-    <div id="modal-terms" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl z-[70] w-11/12 max-w-2xl max-h-[80vh] overflow-y-auto hidden p-8">
-        <h3 class="text-2xl font-bold mb-4">Termos de Uso</h3>
-        <p class="text-gray-600">Conteúdo dos Termos...</p>
-        <button onclick="closeModal()" class="mt-4 text-red-500 underline">Fechar</button>
-    </div>
-    <div id="modal-privacy" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl z-[70] w-11/12 max-w-2xl max-h-[80vh] overflow-y-auto hidden p-8">
-        <h3 class="text-2xl font-bold mb-4">Privacidade</h3>
-        <p class="text-gray-600">Conteúdo da Política...</p>
-        <button onclick="closeModal()" class="mt-4 text-red-500 underline">Fechar</button>
-    </div>
-    <div id="modal-cookies-policy" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-2xl shadow-2xl z-[70] w-11/12 max-w-2xl max-h-[80vh] overflow-y-auto hidden p-8">
-        <h3 class="text-2xl font-bold mb-4">Cookies</h3>
-        <p class="text-gray-600">Conteúdo dos Cookies...</p>
-        <button onclick="closeModal()" class="mt-4 text-red-500 underline">Fechar</button>
-    </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Menu Mobile
-        const btnMobile = document.getElementById('mobile-menu-btn');
-        const menuMobile = document.getElementById('mobile-menu');
-        btnMobile.addEventListener('click', () => menuMobile.classList.toggle('hidden'));
-        document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', () => menuMobile.classList.add('hidden')));
-
-        // Navbar Shadow
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('shadow-md', window.scrollY > 10);
-        });
-
-        // Toggle "Saiba Mais" nos Serviços
-        function toggleService(id, btn) {
-            const content = document.getElementById(id);
-            const isHidden = content.classList.contains('max-h-0');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu Mobile
+            const btn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-menu');
+            const menu = document.getElementById('mobile-menu');
             
-            // Fecha todos primeiro (opcional, remova se quiser abrir múltiplos)
-            document.querySelectorAll('.service-details').forEach(el => {
-                el.classList.add('max-h-0', 'opacity-0');
-                el.classList.remove('max-h-96', 'opacity-100');
+            btn.addEventListener('click', () => menu.classList.remove('translate-x-full'));
+            closeBtn.addEventListener('click', () => menu.classList.add('translate-x-full'));
+            
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => menu.classList.add('translate-x-full'));
             });
 
-            if (isHidden) {
-                content.classList.remove('max-h-0', 'opacity-0');
-                content.classList.add('max-h-96', 'opacity-100');
-                // btn.querySelector('span').innerText = "Ver Menos";
-            } else {
-                content.classList.add('max-h-0', 'opacity-0');
-                content.classList.remove('max-h-96', 'opacity-100');
-                // btn.querySelector('span').innerText = "Saiba Mais";
-            }
-        }
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
 
-        // Floating Buttons & Intersection Observer (Esconder no Footer)
-        const footer = document.getElementById('main-footer');
-        const floatBtns = document.getElementById('floating-buttons');
-        const backToTopBtn = document.getElementById('back-to-top');
-
-        // Observer para esconder quando chegar no footer
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    floatBtns.classList.add('opacity-0', 'pointer-events-none');
-                } else {
-                    floatBtns.classList.remove('opacity-0', 'pointer-events-none');
+            // Swiper Testimonials
+            const swiper = new Swiper('.testimonialSwiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next-custom',
+                    prevEl: '.swiper-button-prev-custom',
+                },
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 2.5 }
                 }
             });
-        }, { threshold: 0.1 });
-        
-        if(footer) observer.observe(footer);
 
-        // Scroll Logic para o Back to Top
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('hidden');
-            } else {
-                backToTopBtn.classList.add('hidden');
-            }
-        });
+            // Entrada animada dos cards
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, { threshold: 0.1 });
 
-        backToTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-        // Modais e Cookies
-        function openModal(id) {
-            document.getElementById('modal-backdrop').classList.remove('hidden');
-            document.getElementById('modal-' + id).classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal() {
-            document.getElementById('modal-backdrop').classList.add('hidden');
-            document.querySelectorAll('[id^="modal-"]').forEach(el => {
-                if(el.id !== 'modal-backdrop') el.classList.add('hidden');
+            document.querySelectorAll('.card-premium').forEach(el => {
+                el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+                observer.observe(el);
             });
-            document.body.style.overflow = 'auto';
-        }
-        
-        const cookieBanner = document.getElementById('cookie-banner');
-        if (!localStorage.getItem('cookiesAccepted')) {
-            setTimeout(() => cookieBanner.classList.remove('hidden', 'translate-y-full'), 2000);
-        }
-        function acceptCookies() {
-            localStorage.setItem('cookiesAccepted', 'true');
-            cookieBanner.classList.add('translate-y-full');
-        }
+        });
     </script>
 </body>
 </html>

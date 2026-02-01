@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="VETCont: Contabilidade Especializada para Clínicas Veterinárias, Pet Shops e Empresas do Segmento Pet. Reduza impostos, evite riscos e maximize seu lucro com especialistas no setor.">
+    <title>VETCont | Contabilidade Especializada para Clínicas Veterinárias e Pet Shops</title>
+
+    <link rel="icon" type="image/png" href="logo-cont.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        vet: {
+                            DEFAULT: '#0f766e',
+                            light: '#14b8a6',
+                            dark: '#134e4a'
+                        }
+                    },
+                    boxShadow: {
+                        'premium': '0 20px 50px -12px rgba(0, 0, 0, 0.08)',
+                    },
+                    animation: {
+                        'bounce-slow': 'bounce 2s infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(20, 184, 166, 0.1);
+        }
+        .vet-gradient {
+            background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);
+        }
+        .vet-gradient-light {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(20, 184, 166, 0.05) 100%);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #0f766e, #2dd4bf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-premium {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-premium:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #0f766e;
+            transition: width 0.3s ease;
+        }
+        .nav-link-hover:hover::after {
+            width: 100%;
+        }
+        .whatsapp-pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-[#fcfcfd] text-slate-800 antialiased font-sans">
+
+    <header class="fixed w-full z-50 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-22 py-4">
+                <div class="flex items-center space-x-3 group cursor-pointer">
+                    <a href="vet-cont.html" class="flex items-center space-x-3">
+                        <img src="logo-cont.png" alt="VETCont Logo" class="h-14 w-auto drop-shadow-sm group-hover:scale-105 transition-transform">
+                    </a>
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link-hover text-sm font-semibold text-slate-600 hover:text-vet transition-colors uppercase tracking-wider">Voltar ao Site</a>
+                    <a href="#sobre" class="nav-link-hover text-sm font-semibold text-slate-600 hover:text-vet transition-colors uppercase tracking-wider">Sobre</a>
+                    <a href="#problema" class="nav-link-hover text-sm font-semibold text-slate-600 hover:text-vet transition-colors uppercase tracking-wider">O Problema</a>
+                    <a href="#solucoes" class="nav-link-hover text-sm font-semibold text-slate-600 hover:text-vet transition-colors uppercase tracking-wider">Soluções</a>
+                    <a href="#contato" class="bg-vet text-white px-6 py-3 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-vet-dark hover:shadow-lg hover:shadow-vet/20 transition-all active:scale-95">
+                        Falar com Especialista VET
+                    </a>
+                </nav>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-slate-100 text-vet">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8">
+        <button id="close-menu" class="absolute top-8 right-8 text-slate-400"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        <a href="index.html" class="text-2xl font-bold text-vet">Voltar ao Site</a>
+        <a href="#sobre" class="text-2xl font-bold text-vet">Sobre</a>
+        <a href="#problema" class="text-2xl font-bold text-vet">O Problema</a>
+        <a href="#solucoes" class="text-2xl font-bold text-vet">Soluções</a>
+        <a href="#contato" class="px-8 py-4 bg-vet text-white rounded-full font-bold">Falar com Especialista VET</a>
+    </div>
+
+    <section class="relative min-h-screen flex items-center overflow-hidden pt-22">
+        <div class="absolute inset-0 z-0 vet-gradient-light"></div>
+        
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-teal-200/30 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-emerald-300/20 rounded-full blur-[120px]"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-md border border-vet/20 px-4 py-2 rounded-full">
+                        <span class="flex h-2 w-2 rounded-full bg-vet-light animate-pulse"></span>
+                        <span class="text-vet-dark text-xs font-bold uppercase tracking-widest">Contabilidade Especializada Setor Pet</span>
+                    </div>
+                    <h1 class="font-heading text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1]">
+                        Contabilidade que entende sua <span class="text-gradient">paixão por animais</span>.
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl">
+                        Especialistas em contabilidade para clínicas veterinárias, pet shops e empresas do segmento Pet. Reduza impostos, evite riscos e maximize seu lucro.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-5">
+                        <a href="https://wa.me/5522998792653" target="_blank" class="flex items-center justify-center px-10 py-5 bg-vet text-white font-extrabold rounded-2xl hover:bg-vet-dark transition-all shadow-2xl hover:-translate-y-1 active:scale-95 group">
+                            Falar com Especialista VET
+                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                        <a href="#solucoes" class="flex items-center justify-center px-10 py-5 bg-transparent border-2 border-vet/30 text-vet font-bold rounded-2xl hover:bg-vet/10 transition-all">
+                            Nossas Soluções
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-6 pt-8 border-t border-vet/10">
+                        <div class="flex -space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-vet border-2 border-white flex items-center justify-center text-[10px] text-white font-bold">+50</div>
+                            <div class="w-10 h-10 rounded-full bg-vet-light border-2 border-white"></div>
+                            <div class="w-10 h-10 rounded-full bg-emerald-200 border-2 border-white"></div>
+                        </div>
+                        <p class="text-sm text-slate-600">Clientes do segmento Pet atendidos</p>
+                    </div>
+                </div>
+                
+                <div class="hidden lg:block relative">
+                    <div class="relative z-10 bg-white/80 backdrop-blur-sm border border-vet/10 p-4 rounded-[2rem] shadow-2xl">
+                        <img src="vet-cont1.png" alt="Veterinária atendendo cachorro" class="rounded-[1.5rem] shadow-inner object-cover h-[500px] w-full">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-2xl shadow-premium z-20 animate-bounce-slow border-l-4 border-vet">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-green-100 p-3 rounded-full text-green-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Economia Fiscal</p>
+                                <p class="text-xl font-heading font-extrabold text-slate-900">Até 40%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-vet/10 rounded-full z-0"></div>
+                        <img src="m-furtado.png" alt="Equipe VETCont" class="relative z-10 rounded-[2rem] shadow-premium border border-slate-100">
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-teal-100 rounded-3xl z-0"></div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 space-y-6">
+                    <h2 class="font-heading text-4xl font-extrabold text-slate-900 leading-tight">
+                        Somos mais que contadores, somos <span class="text-gradient">especialistas no setor Pet</span>.
+                    </h2>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        A <strong>VETCont</strong> nasceu de um sonho: exercer a contabilidade com excelência e ajudar empresas que trabalham no ramo veterinário — nossa verdadeira paixão. Empresa afiliada do <strong>Grupo M. Furtado Contabilidade</strong>.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 flex-shrink-0 w-5 h-5 bg-vet text-white rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                            </div>
+                            <span class="text-slate-700 font-medium">Equipe especializada exclusivamente no setor veterinário.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 flex-shrink-0 w-5 h-5 bg-vet text-white rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                            </div>
+                            <span class="text-slate-700 font-medium">Conhecimento profundo das especificidades fiscais do segmento.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 flex-shrink-0 w-5 h-5 bg-vet text-white rounded-full flex items-center justify-center">
+                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
+                            </div>
+                            <span class="text-slate-700 font-medium">Atendimento humanizado e consultivo para cada cliente.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problema" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-vet font-bold uppercase tracking-widest text-xs">O Perigo da Generalização</span>
+                <h2 class="font-heading text-4xl font-extrabold text-slate-900 mt-3 mb-6">Seu contador generalista está custando caro</h2>
+                <div class="w-20 h-1.5 bg-vet mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-premium border border-slate-100">
+                    <h3 class="font-heading text-2xl font-extrabold text-slate-900 mb-6 flex items-center">
+                        <span class="text-red-500 mr-3">✗</span> Problemas Comuns
+                    </h3>
+                    <ul class="space-y-5">
+                        <li class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-6 h-6 bg-red-50 text-red-600 rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Mistura de Receitas</h4>
+                                <p class="text-slate-600 text-sm mt-1">Tributam venda de produtos (ração, medicamentos) como se fosse serviço, pagando alíquotas maiores.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-6 h-6 bg-red-50 text-red-600 rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Desconhecimento de Monofásicos</h4>
+                                <p class="text-slate-600 text-sm mt-1">Não abatem impostos já pagos na fonte (PIS/COFINS monofásicos), gerando bitributação.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-6 h-6 bg-red-50 text-red-600 rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Riscos Trabalhistas</h4>
+                                <p class="text-slate-600 text-sm mt-1">Insalubridade e periculosidade não calculadas para quem manuseia produtos químicos ou animais.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-vet p-8 rounded-2xl shadow-2xl card-premium relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-10">
+                        <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+                    </div>
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg">
+                            <img src="logo-cont.png" alt="Logo VetCont" class="w-full h-full object-contain p-1">
+                        </div>
+                        <h3 class="font-heading text-2xl font-extrabold text-white mb-4">A Solução VETCont</h3>
+                        <p class="text-white/80 leading-relaxed mb-8">Transformamos riscos em oportunidades com nossa expertise específica no setor Pet.</p>
+                        
+                        <ul class="space-y-5">
+                            <li class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                                <div>
+                                    <h4 class="font-bold text-white">Segregação Inteligente de Receitas</h4>
+                                    <p class="text-white/70 text-sm mt-1">Separamos banho/tosa (serviço) de venda de ração (comércio) para aplicar alíquotas corretas.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                                <div>
+                                    <h4 class="font-bold text-white">Recuperação de Impostos Indevidos</h4>
+                                    <p class="text-white/70 text-sm mt-1">Identificamos e recuperamos PIS/COFINS monofásicos pagos indevidamente.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start space-x-4">
+                                <div class="flex-shrink-0 w-6 h-6 bg-white/20 text-white rounded-full flex items-center justify-center text-sm font-bold">✓</div>
+                                <div>
+                                    <h4 class="font-bold text-white">Compliance Total</h4>
+                                    <p class="text-white/70 text-sm mt-1">Gestão de alvarás, controle de medicamentos, folha especializada e eSocial específico.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucoes" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-vet font-bold uppercase tracking-widest text-xs">Nossa Especialidade</span>
+                <h2 class="font-heading text-4xl font-extrabold text-slate-900 mt-3 mb-6">Atendemos todo o ecossistema Pet</h2>
+                <div class="w-20 h-1.5 bg-vet mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-10 rounded-2xl shadow-premium card-premium border border-slate-100">
+                    <div class="w-16 h-16 bg-vet/10 rounded-2xl flex items-center justify-center text-vet mb-8">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-extrabold text-slate-900 mb-4">Saúde Animal</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Clínicas Veterinárias</li>
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Hospitais Veterinários</li>
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Veterinários(as) PJ e PF</li>
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Laboratórios de Análises</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-10 rounded-2xl shadow-premium card-premium border border-slate-100">
+                    <div class="w-16 h-16 bg-vet/10 rounded-2xl flex items-center justify-center text-vet mb-8">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-extrabold text-slate-900 mb-4">Varejo & Estética</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Pet Shops</li>
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Banho e Tosa</li>
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Groomers Profissionais</li>
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> E-commerce Pet</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-10 rounded-2xl shadow-premium card-premium border border-slate-100">
+                    <div class="w-16 h-16 bg-vet/10 rounded-2xl flex items-center justify-center text-vet mb-8">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="font-heading text-xl font-extrabold text-slate-900 mb-4">Hospedagem & Criação</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Hotel Pet</li>
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Day Care Pet</li>
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Creche Pet</li>
+                        <li class="flex items-center"><span class="mr-3 text-vet">•</span> Criadores Pet</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-lg font-bold text-slate-700 mb-6">E também atendemos:</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="px-5 py-3 bg-vet/5 text-vet rounded-full font-medium">Infoprodutores Pet</span>
+                    <span class="px-5 py-3 bg-vet/5 text-vet rounded-full font-medium">Fabricantes de Ração</span>
+                    <span class="px-5 py-3 bg-vet/5 text-vet rounded-full font-medium">Distribuidores</span>
+                    <span class="px-5 py-3 bg-vet/5 text-vet rounded-full font-medium">Transportadoras Pet</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-24 bg-vet relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-vet-light rounded-full -mr-64 -mt-64 blur-[120px]"></div>
+            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-emerald-300 rounded-full -ml-64 -mb-64 blur-[120px]"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <div class="bg-white/95 backdrop-blur-md rounded-2xl p-8 md:p-20 shadow-2xl">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">
+                        Pare de pagar impostos indevidos
+                    </h2>
+                    <p class="text-slate-600 text-xl leading-relaxed">
+                        Agende um diagnóstico gratuito do seu CNPJ. Identificaremos onde você está perdendo dinheiro e como podemos recuperá-lo.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <a href="https://wa.me/5522998792653" class="group p-8 rounded-2xl bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-xl hover:shadow-green-500/20 hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold mb-2">WhatsApp</h3>
+                        <p class="text-white/80 text-sm mb-6">Resposta imediata para diagnóstico gratuito.</p>
+                        <span class="inline-flex items-center font-bold text-white group-hover:translate-x-2 transition-transform">
+                            Falar com Especialista <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
+
+                    <div class="group p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                        <div class="w-14 h-14 bg-vet/10 text-vet rounded-2xl flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                        </div>
+                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Telefone</h3>
+                        <p class="text-slate-500 text-sm mb-6">Fale diretamente com nosso especialista em Cabo Frio.</p>
+                        <p class="font-heading text-xl font-extrabold text-vet">(22) 99719-4100</p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <p class="text-sm text-slate-500 font-medium">Atendimento em toda a Região dos Lagos/RJ e online para todo Brasil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed bottom-8 right-8 z-50 flex flex-col space-y-4">
+        <a href="https://wa.me/5522998792653" target="_blank" class="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+        </a>
+    </div>
+
+    <footer class="bg-slate-900 pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="logo.png" alt="VETCont Logo" class="h-14 w-auto brightness-0 invert opacity-90">
+                        <img src="logo-cont.png" alt="M. Furtado Logo" class="h-14 w-auto opacity-90">
+                    </div>
+                    <p class="text-slate-400 max-w-sm mb-6">
+                        Empresa afiliada do Grupo M. Furtado Contabilidade. Especialistas em contabilidade para o setor Pet.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/m.furtadocontabilidade/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-vet transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.351-.2 6.78-2.618 6.981-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.352-2.618-6.78-6.98-6.981C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 10.001 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/monique-furtado-479aab189" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-vet transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Links Rápidos</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="index.html" class="hover:text-vet-light transition-colors">Site Principal</a></li>
+                        <li><a href="#sobre" class="hover:text-vet-light transition-colors">Sobre o VETCont</a></li>
+                        <li><a href="#solucoes" class="hover:text-vet-light transition-colors">Segmentos Atendidos</a></li>
+                        <li><a href="#contato" class="hover:text-vet-light transition-colors">Consultoria Especializada da VETCont</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Área Legal</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="privacidade.html" class="hover:text-brand-600">Privacidade</a></li>
+                        <li><a href="termos.html" class="hover:text-brand-600">Termos de Uso</a></li>
+                        <li><a href="lgpd.html" class="hover:text-brand-600">LGPD</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/5 text-center">
+                <p class="text-slate-500 text-xs tracking-widest">© 2026 VETCont - Grupo M. Furtado Contabilidade - Cabo Frio/RJ - Região dos Lagos</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menu Mobile
+            const btn = document.getElementById('mobile-menu-btn');
+            const closeBtn = document.getElementById('close-menu');
+            const menu = document.getElementById('mobile-menu');
+            
+            btn.addEventListener('click', () => menu.classList.remove('translate-x-full'));
+            closeBtn.addEventListener('click', () => menu.classList.add('translate-x-full'));
+            
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => menu.classList.add('translate-x-full'));
+            });
+
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Entrada animada dos cards
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.card-premium').forEach(el => {
+                el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
