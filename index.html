@@ -3,16 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Permite que os motores de busca indexem e sigam os links -->
     <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="M. Furtado Contabilidade: Especialistas em contabilidade empresarial e VETCont - solução exclusiva para clínicas veterinárias e pet shops na Região dos Lagos/RJ.">
-    <title>M. Furtado Contabilidade | Inteligência Contábil & VETCont</title>
+    
+    <!-- Meta tags para SEO e compartilhamento em redes sociais -->
+    <meta name="description" content="Contabilidade especializada em Clínicas Veterinárias e Pet Shops na Região dos Lagos. Reduza impostos e aumente seu lucro com a M. Furtado e o método VETCont.">
+    <meta name="keywords" content="contabilidade cabo frio, contabilidade veterinaria, vetcont, abrir empresa regiao dos lagos, contador pet shop, planejamento tributário">
+    <meta name="author" content="M. Furtado Contabilidade">
+    <title>M. Furtado Contabilidade | Especialistas em VET e Lucro Real</title>
 
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mfurtadocontabilidade.com.br/">
+    <meta property="og:title" content="M. Furtado | Inteligência Contábil para Vets">
+    <meta property="og:description" content="Especialistas em reduzir a carga tributária de clínicas veterinárias e empresas da Região dos Lagos. Fale com um consultor.">
+    <meta property="og:image" content="https://mfurtadocontabilidade.com.br/hero.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://mfurtadocontabilidade.com.br/">
+    <meta property="twitter:title" content="M. Furtado | Contabilidade Consultiva">
+    <meta property="twitter:description" content="Menos burocracia, mais lucro. Conheça o método VETCont.">
+    <meta property="twitter:image" content="https://mfurtadocontabilidade.com.br/hero.png">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="logo-cont(1).png">
+    
+    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Swiper CSS (para possíveis carrosséis) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
+    <!-- Schema.org para dados estruturados (melhora o SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "M. Furtado Contabilidade",
+      "image": "https://mfurtadocontabilidade.com.br/logo-cont(1).png",
+      "@id": "https://mfurtadocontabilidade.com.br/",
+      "url": "https://mfurtadocontabilidade.com.br/",
+      "telephone": "+5522998792653",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cabo Frio",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      },
+      "description": "Contabilidade consultiva e especializada em Clínicas Veterinárias e Pet Shops. Redução de impostos e método VETCont na Região dos Lagos."
+    }
+    </script>
+
+    <!-- Tailwind CSS via CDN com configurações personalizadas -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,12 +69,12 @@
                     },
                     colors: {
                         brand: {
-                            50: '#f1f5f9',
-                            100: '#e2e8f0',
-                            600: '#1e3a8a',
-                            700: '#1e293b',
-                            800: '#0f172a',
-                            900: '#020617',
+                            50: '#f2f7f4',
+                            100: '#e1ede5',
+                            600: '#2a6347',
+                            700: '#225039',
+                            800: '#1E4632', // Cor principal (Verde Hero)
+                            900: '#133022',
                         },
                         vet: {
                             DEFAULT: '#0d9488',
@@ -38,8 +83,7 @@
                         }
                     },
                     boxShadow: {
-                        'premium': '0 20px 50px -12px rgba(15, 23, 42, 0.15)',
-                        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+                        'premium': '0 20px 50px -12px rgba(30, 70, 50, 0.15)',
                     },
                     animation: {
                         'bounce-slow': 'bounce 2s infinite'
@@ -49,18 +93,17 @@
         }
     </script>
 
+    <!-- Estilos customizados (além do Tailwind) -->
     <style>
+        html { scroll-padding-top: 100px; }
         .glass-header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
-        .hero-overlay {
-            background: linear-gradient(135deg, rgba(2, 6, 23, 0.95) 0%, rgba(30, 58, 138, 0.85) 100%);
-        }
         .text-gradient {
-            background: linear-gradient(to right, #ffffff, #e2e8f0);
+            background: linear-gradient(to right, #ffffff, #bbf7d0);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -69,7 +112,7 @@
         }
         .card-premium:hover {
             transform: translateY(-8px);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
         }
         .nav-link-hover::after {
             content: '';
@@ -78,492 +121,647 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #1e3a8a;
+            background-color: #1E4632;
             transition: width 0.3s ease;
         }
-        .nav-link-hover:hover::after {
-            width: 100%;
+        .nav-link-hover:hover::after { width: 100%; }
+        
+        #menu-overlay {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
-        .hero-bg {
-            background-image: url('hero.jpg');
-            background-size: cover;
-            background-position: center;
+        #menu-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Estilo para o banner de cookies */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 70, 50, 0.95);
+            backdrop-filter: blur(8px);
+            color: white;
+            padding: 1rem;
+            z-index: 100;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            border-top: 2px solid #2a6347;
+        }
+        .cookie-banner.show {
+            transform: translateY(0);
         }
     </style>
+
+    <!-- ESPAÇO PARA SCRIPTS DE ADS (ex: Google Analytics, Facebook Pixel) -->
+    <!-- Exemplo: 
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+        <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXX'); </script>
+    -->
+    <!-- FIM DO ESPAÇO PARA ADS -->
+
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased font-sans">
 
-    <header class="fixed w-full z-50 glass-header">
+    <!-- ==================== HEADER FIXO (com logo maior) ==================== -->
+    <header class="fixed w-full z-50 glass-header" role="banner">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-22 py-4">
-                <div onclick="window.location.reload()" class="flex items-center space-x-3 group cursor-pointer">
-                    <img src="logo-cont(1).png" alt="M. Furtado Logo" class="h-14 w-auto drop-shadow-sm group-hover:scale-105 transition-transform">
-                </div>
+                <!-- Logo principal com link para a home (TAMANHO AUMENTADO para h-16) -->
+                <a href="index.html" class="flex items-center space-x-3 group cursor-pointer" aria-label="Voltar à página inicial">
+                    <img src="logo-cont(1).png" alt="M. Furtado Logo" class="h-16 w-auto drop-shadow-sm group-hover:scale-105 transition-transform">
+                </a>
 
-                <nav class="hidden md:flex items-center space-x-8">
+                <!-- Navegação para desktop -->
+                <nav class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Navegação Principal">
                     <a href="#inicio" class="nav-link-hover text-sm font-bold text-slate-700 hover:text-brand-600 transition-colors uppercase tracking-widest">Home</a>
                     <a href="#sobre" class="nav-link-hover text-sm font-bold text-slate-700 hover:text-brand-600 transition-colors uppercase tracking-widest">Sobre</a>
                     <a href="#servicos" class="nav-link-hover text-sm font-bold text-slate-700 hover:text-brand-600 transition-colors uppercase tracking-widest">Serviços</a>
+                    <a href="#vet-cont" class="nav-link-hover text-sm font-bold text-vet hover:text-vet-dark transition-colors uppercase tracking-widest">VETCont</a>
                     <a href="#depoimentos" class="nav-link-hover text-sm font-bold text-slate-700 hover:text-brand-600 transition-colors uppercase tracking-widest">Depoimentos</a>
-                    <a href="vet-cont.html" class="flex items-center text-sm font-bold text-vet hover:text-vet-dark transition-colors uppercase tracking-widest bg-vet/5 px-4 py-2 rounded-full border border-vet/10">
-                        <span class="mr-2">🐾</span> VetCont
-                    </a>
-                    <a href="#contato" class="bg-brand-600 text-white px-6 py-3 rounded-md font-bold text-sm uppercase tracking-widest hover:bg-brand-800 hover:shadow-lg transition-all active:scale-95">
+                    <a href="#contato" aria-label="Página de Contato" class="bg-brand-600 text-white px-6 py-3 rounded-md font-bold text-sm uppercase tracking-widest hover:bg-brand-800 hover:shadow-lg transition-all active:scale-95">
                         Contato
                     </a>
                 </nav>
 
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-slate-100 text-brand-900">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <!-- Botão do menu mobile (hambúrguer) -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-slate-100 text-brand-900" aria-label="Abrir menu mobile" aria-expanded="false">
+                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </div>
     </header>
 
-    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8">
-        <button id="close-menu" class="absolute top-8 right-8 text-slate-400"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
-        <a href="#inicio" class="text-2xl font-bold text-brand-900 uppercase tracking-widest">Home</a>
-        <a href="#sobre" class="text-2xl font-bold text-brand-900 uppercase tracking-widest">Sobre</a>
-        <a href="#servicos" class="text-2xl font-bold text-brand-900 uppercase tracking-widest">Serviços</a>
-        <a href="#depoimentos" class="text-2xl font-bold text-brand-900 uppercase tracking-widest">Depoimentos</a>
-        <a href="vet-cont.html" class="text-2xl font-bold text-vet underline uppercase tracking-widest">Área VET</a>
+    <!-- Overlay escuro para o menu mobile -->
+    <div id="menu-overlay" class="fixed inset-0 z-30 bg-black/60 backdrop-blur-sm md:hidden" aria-hidden="true"></div>
+
+    <!-- Menu mobile (desliza da direita) -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-40 w-64 bg-white transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col justify-center items-center space-y-8 shadow-2xl" role="dialog" aria-modal="true">
+        <button id="close-menu" class="absolute top-8 right-8 text-slate-400" aria-label="Fechar menu"><svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
+        <a href="#inicio" class="text-xl font-bold text-brand-900 uppercase tracking-widest">Home</a>
+        <a href="#sobre" class="text-xl font-bold text-brand-900 uppercase tracking-widest">Sobre</a>
+        <a href="#servicos" class="text-xl font-bold text-brand-900 uppercase tracking-widest">Serviços</a>
+        <a href="#vet-cont" class="text-xl font-bold text-vet uppercase tracking-widest">VETCont</a>
+        <a href="#depoimentos" class="text-xl font-bold text-brand-900 uppercase tracking-widest">Depoimentos</a>
         <a href="#contato" class="px-8 py-4 bg-brand-600 text-white rounded-md font-bold uppercase tracking-widest">Fale Conosco</a>
     </div>
 
-    <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
-        <div class="absolute inset-0 z-0 hero-bg">
-            <div class="absolute inset-0 hero-overlay"></div>
-        </div>
-        
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-blue-900/30 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-900/50 rounded-full blur-[120px]"></div>
+    <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
+    <main role="main">
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8">
-                    <div class="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full">
-                        <span class="flex h-2 w-2 rounded-full bg-blue-400 animate-pulse"></span>
-                        <span class="text-slate-200 text-xs font-bold uppercase tracking-widest">Contabilidade Consultiva Região dos Lagos</span>
-                    </div>
-                    <h1 class="font-heading text-5xl md:text-7xl font-extrabold text-white leading-[1.1]">
-                        Inteligência que <span class="text-gradient">impulsiona</span> seu lucro.
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
-                        Mais que burocracia, entregamos estratégia. Especialistas em gestão fiscal, tributária e contabilidade focada no setor veterinário em toda a Região dos Lagos.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-5">
-                        <a href="https://wa.me/5522998792653" target="_blank" class="flex items-center justify-center px-10 py-5 bg-white text-brand-900 font-extrabold rounded-md hover:bg-slate-100 transition-all shadow-xl hover:-translate-y-1 active:scale-95 group uppercase text-sm tracking-widest">
-                            Falar com Especialista
-                            <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                        <a href="#servicos" class="flex items-center justify-center px-10 py-5 bg-transparent border border-white/30 text-white font-bold rounded-md hover:bg-white/5 transition-all uppercase text-sm tracking-widest">
-                            Nossas Soluções
-                        </a>
-                    </div>
-                    <div class="flex items-center space-x-6 pt-8 border-t border-white/10">
-                        <div class="flex -space-x-3">
-                            <div class="w-10 h-10 rounded-full bg-brand-800 border-2 border-brand-900 flex items-center justify-center text-[10px] text-white font-bold">+100</div>
-                            <div class="w-10 h-10 rounded-full bg-slate-500 border-2 border-brand-900"></div>
-                            <div class="w-10 h-10 rounded-full bg-slate-600 border-2 border-brand-900"></div>
+        <!-- SEÇÃO HERO (início) -->
+        <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden bg-brand-900" aria-labelledby="hero-title">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-900/95 to-brand-700/90"></div>
+            </div>
+            
+            <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-600/30 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-800/50 rounded-full blur-[120px]"></div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="space-y-8">
+                        <div class="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full">
+                            <span class="flex h-2 w-2 rounded-full bg-green-400 animate-pulse"></span>
+                            <span class="text-slate-200 text-xs font-bold uppercase tracking-widest">Atendimento em toda Região dos Lagos</span>
                         </div>
-                        <p class="text-sm text-slate-400">Empresas que confiam na nossa gestão</p>
-                    </div>
-                </div>
-                
-                <div class="hidden lg:block relative">
-                    <div class="relative z-10 bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-xl shadow-2xl">
-                        <img src="hero.png" alt="Business Intelligence" class="rounded-lg shadow-inner grayscale-[0.1] hover:grayscale-0 transition-all duration-700 object-cover h-[500px] w-full">
-                    </div>
-                    <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-lg shadow-premium z-20 animate-bounce-slow border-l-4 border-brand-600">
-                        <div class="flex items-center space-x-4">
-                            <div class="bg-blue-50 p-3 rounded-full text-brand-600">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
-                            </div>
-                            <div>
-                                <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Redução de Impostos</p>
-                                <p class="text-xl font-heading font-extrabold text-slate-900">Até 35% Economia</p>
-                            </div>
+                        <h1 id="hero-title" class="font-heading text-5xl md:text-7xl font-extrabold text-white leading-[1.1]">
+                            Transforme impostos em <span class="text-gradient">lucro real</span>.
+                        </h1>
+                        <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
+                            Acabe com a insegurança fiscal. Entregamos gestão tributária estratégica para empresas que querem crescer sem medo da Receita, com especialidade exclusiva no mercado veterinário.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-5">
+                            <a href="https://wa.me/5522998792653" target="_blank" class="flex items-center justify-center px-10 py-5 bg-white text-brand-900 font-extrabold rounded-md hover:bg-slate-100 transition-all shadow-xl hover:-translate-y-1 active:scale-95 group uppercase text-sm tracking-widest">
+                                Quero Economizar
+                                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </a>
+                            <a href="#servicos" class="flex items-center justify-center px-10 py-5 bg-transparent border border-white/30 text-white font-bold rounded-md hover:bg-white/5 transition-all uppercase text-sm tracking-widest">
+                                Nossas Soluções
+                            </a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 bg-slate-50 relative z-20">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white shadow-premium rounded-xl p-8 -mt-24 border border-slate-200/60">
-                <div class="text-center md:border-r border-slate-100">
-                    <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">10+</p>
-                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Anos de Mercado</p>
-                </div>
-                <div class="text-center md:border-r border-slate-100">
-                    <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">200+</p>
-                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Clientes Ativos</p>
-                </div>
-                <div class="text-center md:border-r border-slate-100">
-                    <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">R$ 5M+</p>
-                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Impostos Recuperados</p>
-                </div>
-                <div class="text-center">
-                    <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">100%</p>
-                    <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Foco no Cliente</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="sobre" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                <div class="md:w-1/2">
-                    <div class="relative">
-                        <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-100 rounded-lg z-0"></div>
-                        <img src="m-furtado.png" alt="Equipe M Furtado" class="relative z-10 rounded-lg shadow-premium border border-slate-100">
-                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-100 rounded-lg z-0"></div>
-                    </div>
-                </div>
-                <div class="md:w-1/2 space-y-6">
-                    <h2 class="font-heading text-4xl font-extrabold text-slate-900 leading-tight">
-                        Comprometimento com a sua <span class="text-brand-600">segurança financeira</span>.
-                    </h2>
-                    <p class="text-lg text-slate-600 leading-relaxed">
-                        A M. Furtado Contabilidade nasceu com o propósito de desmistificar a contabilidade tradicional. Localizados em Cabo Frio e atendendo toda a Região dos Lagos, combinamos tecnologia de ponta com um atendimento humanizado e consultivo.
-                    </p>
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-3">
-                            <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center">
-                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
-                            </div>
-                            <span class="text-slate-700 font-medium">Equipe técnica altamente qualificada e atualizada.</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center">
-                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
-                            </div>
-                            <span class="text-slate-700 font-medium">Foco em redução de custos e otimização tributária.</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center">
-                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path></svg>
-                            </div>
-                            <span class="text-slate-700 font-medium">Especialistas no segmento veterinário e pet shops.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicos" class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-20">
-                <span class="text-brand-600 font-bold uppercase tracking-widest text-xs">Especialidades</span>
-                <h2 class="font-heading text-4xl font-extrabold text-slate-900 mt-3 mb-6">Soluções feitas para o seu crescimento</h2>
-                <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-10 rounded-xl shadow-premium card-premium border border-slate-100">
-                    <div class="w-16 h-16 bg-slate-50 rounded-lg flex items-center justify-center text-brand-600 mb-8 border border-slate-100">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                    </div>
-                    <h3 class="font-heading text-xl font-extrabold text-slate-900 mb-4">Contabilidade Geral</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Processamento contábil preciso para empresas de todos os portes, garantindo conformidade total com a legislação.</p>
-                    <ul class="space-y-2 mb-8 text-sm font-semibold text-slate-500">
-                        <li class="flex items-center"><span class="mr-2 text-brand-600">✓</span> Balancetes mensais</li>
-                        <li class="flex items-center"><span class="mr-2 text-brand-600">✓</span> Demonstrações de lucro</li>
-                    </ul>
-                </div>
-
-                <div class="bg-brand-900 p-10 rounded-xl shadow-2xl card-premium relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-125 transition-transform duration-700">
-                        <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
-                    </div>
-                    <div class="relative z-10">
-                        <div class="w-16 h-16 bg-white rounded-lg flex items-center justify-center mb-8 shadow-lg border border-white/10 overflow-hidden">
-                            <img src="logo-cont.png" alt="Logo VetCont" class="w-full h-full object-contain p-1">
-                        </div>
-                        <h3 class="font-heading text-2xl font-extrabold text-white mb-4">VETCont</h3>
-                        <p class="text-slate-300 leading-relaxed mb-8">Nossa solução exclusiva para o setor Pet. Planejamento tributário específico que reduz drasticamente seus impostos.</p>
-                        <a href="vet-cont.html" class="inline-flex items-center px-6 py-3 bg-white text-brand-900 font-bold rounded-md hover:bg-slate-100 transition-colors group uppercase text-xs tracking-widest">
-                            Conhecer VETCont
-                            <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="bg-white p-10 rounded-xl shadow-premium card-premium border border-slate-100">
-                    <div class="w-16 h-16 bg-slate-50 rounded-lg flex items-center justify-center text-brand-600 mb-8 border border-slate-100">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h3 class="font-heading text-xl font-extrabold text-slate-900 mb-4">Recuperação Tributária</h3>
-                    <p class="text-slate-600 leading-relaxed mb-6">Análise profunda dos últimos 5 anos para identificar impostos pagos a maior e solicitar a restituição para seu caixa.</p>
-                    <div class="bg-green-50 text-green-800 p-4 rounded-lg text-sm font-bold flex items-center border border-green-100">
-                        <span class="mr-2">💰</span> Ideal para empresas no Simples Nacional.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="depoimentos" class="depoimentos py-24 bg-white overflow-hidden border-t border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
-                <div class="max-w-2xl">
-                    <span class="text-brand-600 font-bold uppercase tracking-widest text-xs">Testemunhos</span>
-                    <h2 class="font-heading text-4xl font-extrabold text-slate-900 mt-3 leading-tight">
-                        A confiança de quem <br>decidiu <span class="text-brand-600">crescer com segurança</span>
-                    </h2>
-                </div>
-                <div class="flex space-x-4">
-                    <button class="swiper-button-prev-custom w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all hover:border-brand-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                    </button>
-                    <button class="swiper-button-next-custom w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:bg-brand-600 hover:text-white transition-all hover:border-brand-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                    </button>
-                </div>
-            </div>
-
-            <div class="swiper testimonialSwiper pb-12">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide h-auto">
-                        <div class="bg-slate-50 p-8 md:p-10 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full flex flex-col border border-slate-100">
-                            <div class="flex text-yellow-500 mb-6">★★★★★</div>
-                            <p class="text-slate-600 text-lg leading-relaxed italic mb-8 flex-grow">
-                                "Sempre achei que pagava muito imposto, mas não sabia como mudar. A M. Furtado fez uma revisão completa e conseguimos recuperar créditos que nem imaginávamos. O atendimento é impecável e muito técnico."
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-brand-100 rounded-full flex items-center justify-center font-bold text-brand-700">RC</div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 leading-none">Ricardo Camargo</h4>
-                                    <p class="text-sm text-slate-500 mt-1">Sócio-Diretor, Logística Lagos</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide h-auto">
-                        <div class="bg-brand-800 p-8 md:p-10 rounded-xl shadow-2xl h-full flex flex-col relative overflow-hidden text-white border border-brand-700">
-                            <div class="absolute top-6 right-8 text-6xl text-white/10 font-serif">"</div>
-                            <div class="flex text-vet-light mb-6 font-bold uppercase text-sm tracking-widest">🐾 Especialidade VET</div>
-                            <p class="text-slate-300 text-lg leading-relaxed italic mb-8 flex-grow">
-                                "Como veterinária, minha paixão é cuidar dos pets, a gestão era um pesadelo. Com o VETCont, hoje tenho total clareza dos meus custos e reduzi minha carga tributária drasticamente. Essencial para clínicas!"
-                            </p>
-                            <div class="flex items-center space-x-4 border-t border-white/10 pt-6">
-                                <div class="w-12 h-12 bg-vet rounded-full flex items-center justify-center font-bold text-white">AM</div>
-                                <div>
-                                    <h4 class="font-bold text-white leading-none">Dra. Ana Mendes</h4>
-                                    <p class="text-sm text-slate-400 mt-1">Proprietária, Centro Vet Popular</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide h-auto">
-                        <div class="bg-slate-50 p-8 md:p-10 rounded-xl shadow-sm hover:shadow-md transition-shadow h-full flex flex-col border border-slate-100">
-                            <div class="flex text-yellow-500 mb-6">★★★★★</div>
-                            <p class="text-slate-600 text-lg leading-relaxed italic mb-8 flex-grow">
-                                "Trabalhamos com a M. Furtado há 5 anos. O que mais valorizo é a proatividade. Eles não esperam o problema acontecer, eles nos avisam antes e sugerem a melhor rota estratégica. Parceiros de verdade."
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center font-bold text-slate-700">FL</div>
-                                <div>
-                                    <h4 class="font-bold text-slate-900 leading-none">Fabrício Lemos</h4>
-                                    <p class="text-sm text-slate-500 mt-1">CEO, Inova Tech Group</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination !-bottom-2"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contato" class="py-24 bg-brand-900 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600 rounded-full -mr-64 -mt-64 blur-[120px]"></div>
-            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900 rounded-full -ml-64 -mb-64 blur-[120px]"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 relative z-10">
-            <div class="bg-white/95 backdrop-blur-md rounded-xl p-8 md:p-20 shadow-2xl flex flex-col lg:flex-row gap-16 items-center">
-                <div class="lg:w-5/12 space-y-8">
-                    <div>
-                        <span class="inline-block py-1 px-4 rounded-full bg-brand-100 text-brand-800 text-xs font-bold uppercase tracking-widest mb-6">
-                            Atendimento Imediato
-                        </span>
-                        <h2 class="font-heading text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
-                            Vamos construir o <span class="text-brand-600">próximo capítulo</span> do seu sucesso?
-                        </h2>
                     </div>
                     
-                    <p class="text-slate-600 text-xl leading-relaxed">
-                        Estamos prontos para otimizar sua gestão. Escolha o canal de sua preferência e fale com um especialista agora mesmo.
-                    </p>
-
-                    <div class="pt-6">
-                        <p class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Siga nossa inteligência contábil</p>
-                        <div class="flex space-x-4">
-                            
-                            <a href="https://www.instagram.com/m.furtadocontabilidade/" target="_blank" 
-                            class="w-14 h-14 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-[#E1306C] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm">
-                                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.947.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                </svg>
-                            </a>
-
-                            <a href="https://www.linkedin.com/in/monique-furtado-479aab189" target="_blank" 
-                            class="w-14 h-14 rounded-lg bg-slate-100 flex items-center justify-center text-slate-700 hover:bg-[#0077b5] hover:text-white hover:-translate-y-1 transition-all duration-300 shadow-sm">
-                                <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                </svg>
-                            </a>
-
+                    <div class="hidden lg:block relative">
+                        <div class="relative z-10 bg-white/5 backdrop-blur-sm border border-white/10 p-4 rounded-xl shadow-2xl">
+                            <img src="hero.png" alt="Inteligência Contábil M Furtado" class="rounded-lg shadow-inner grayscale-[0.1] hover:grayscale-0 transition-all duration-700 object-cover h-[500px] w-full">
                         </div>
-                    </div>
-                </div>
-
-                <div class="lg:w-7/12 grid sm:grid-cols-2 gap-6 w-full">
-                    <a href="https://wa.me/5522998792653" class="group p-8 rounded-xl bg-green-600 text-white shadow-xl hover:shadow-green-500/20 hover:-translate-y-2 transition-all duration-300">
-                        <div class="w-14 h-14 bg-white/20 rounded-lg flex items-center justify-center mb-12">
-                            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        </div>
-                        <h3 class="font-heading text-2xl font-bold mb-2">WhatsApp</h3>
-                        <p class="text-white/80 text-sm mb-6">Resposta imediata para urgências e orçamentos.</p>
-                        <span class="inline-flex items-center font-bold text-white group-hover:translate-x-2 transition-transform">
-                            Iniciar conversa <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"/></svg>
-                        </span>
-                    </a>
-
-                    <div class="group p-8 rounded-xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-                        <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center mb-12">
-                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                        </div>
-                        <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Telefone</h3>
-                        <p class="text-slate-500 text-sm mb-6">Fale diretamente com nossa central em Cabo Frio.</p>
-                        <p class="font-heading text-xl font-extrabold text-brand-900">(22) 99719-4100</p>
-                    </div>
-
-                    <div class="sm:col-span-2 group p-8 rounded-xl bg-brand-800 text-white shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border border-brand-700">
-                        <div class="flex items-center space-x-6">
-                            <div class="w-14 h-14 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                            </div>
-                            <div>
-                                <h3 class="font-heading text-xl font-bold">Nossa Localização</h3>
-                                <p class="text-slate-400">Atendimento presencial e consultoria estratégica em Cabo Frio - RJ</p>
+                        <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-lg shadow-premium z-20 animate-bounce-slow border-l-4 border-brand-600">
+                            <div class="flex items-center space-x-4">
+                                <div class="bg-brand-50 p-3 rounded-full text-brand-600">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 font-bold uppercase tracking-wider">Recuperação Fiscal</p>
+                                    <p class="text-xl font-heading font-extrabold text-slate-900">Resultados Reais</p>
+                                </div>
                             </div>
                         </div>
-                        <a href="https://maps.google.com" target="_blank" class="px-8 py-4 bg-white/10 hover:bg-white/20 rounded-md font-bold transition-colors text-center uppercase text-sm tracking-wider">
-                            Ver no Google Maps
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- SEÇÃO DE NÚMEROS (cards com estatísticas) -->
+        <section class="py-12 bg-slate-50 relative z-20" aria-label="Nossos Números">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 bg-white shadow-premium rounded-xl p-8 -mt-24 border border-slate-200/60 relative z-30">
+                    <div class="text-center md:border-r border-slate-100">
+                        <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">10+</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Anos de Experiência</p>
+                    </div>
+                    <div class="text-center md:border-r border-slate-100">
+                        <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">200+</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Clientes Satisfeitos</p>
+                    </div>
+                    <div class="text-center md:border-r border-slate-100">
+                        <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">R$ 5M+</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Recuperados</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-4xl font-heading font-extrabold text-brand-600 mb-1">100%</p>
+                        <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Humanizado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE -->
+        <section id="sobre" class="py-24 bg-white" aria-labelledby="sobre-title">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-16">
+                    <div class="md:w-1/2">
+                        <div class="relative">
+                            <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-100 rounded-lg z-0"></div>
+                            <img src="m-furtado.png" loading="lazy" alt="Equipa M Furtado Contabilidade" class="relative z-10 rounded-lg shadow-premium border border-slate-100 w-full h-auto">
+                            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-100 rounded-lg z-0"></div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 space-y-6">
+                        <h2 id="sobre-title" class="font-heading text-4xl font-extrabold text-slate-900 leading-tight">
+                            O seu negócio não pode depender da <span class="text-brand-600">sorte</span>.
+                        </h2>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            A M. Furtado nasceu para abolir a "contabilidade de gaveta". Não nos limitamos a enviar guias de impostos; auditamos os seus números para destrancar oportunidades de poupança financeira. Atendemos de Cabo Frio a toda a Região dos Lagos aliando tecnologia a uma proximidade real.
+                        </p>
+                        <ul class="space-y-4" aria-label="Diferenciais">
+                            <li class="flex items-start space-x-3">
+                                <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center" aria-hidden="true">✓</div>
+                                <span class="text-slate-700 font-medium">Contabilidade Consultiva: Decisões baseadas em dados reais.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center" aria-hidden="true">✓</div>
+                                <span class="text-slate-700 font-medium">BPO Financeiro: Assumimos o financeiro para que se foque nas vendas.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center" aria-hidden="true">✓</div>
+                                <span class="text-slate-700 font-medium">Especialistas em tributação para os setores Veterinário.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SEÇÃO SERVIÇOS (ATUALIZADA) ==================== -->
+        <section id="servicos" class="py-24 bg-slate-50" aria-labelledby="servicos-title">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <span class="text-brand-600 font-bold uppercase tracking-widest text-xs">O que fazemos</span>
+                    <h2 id="servicos-title" class="font-heading text-4xl font-extrabold text-slate-900 mt-3 mb-6">Soluções para Blindar e Otimizar a sua Empresa</h2>
+                    <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- GRADE DE CARDS: 3 cards das áreas + 1 card destaque VETCont -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- CARD 1: Área Trabalhista -->
+                    <article class="bg-white p-6 rounded-xl shadow-premium card-premium border border-slate-100 flex flex-col h-full">
+                        <div class="w-14 h-14 bg-brand-50 rounded-lg flex items-center justify-center text-brand-600 mb-6 border border-brand-100">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        </div>
+                        <h3 class="font-heading text-xl font-extrabold text-slate-900 mb-3">Área Trabalhista</h3>
+                        <ul class="text-slate-600 text-sm space-y-2 mb-4 flex-grow">
+                            <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Todos os serviços burocráticos de folha de pagamento (registros, rescisões, férias, encargos, etc.)</li>
+                            <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Declarações mensais e anuais.</li>
+                        </ul>
+                    </article>
+
+                    <!-- CARD 2: Área Fiscal -->
+                    <article class="bg-white p-6 rounded-xl shadow-premium card-premium border border-slate-100 flex flex-col h-full">
+                        <div class="w-14 h-14 bg-brand-50 rounded-lg flex items-center justify-center text-brand-600 mb-6 border border-brand-100">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="font-heading text-xl font-extrabold text-slate-900 mb-3">Área Fiscal</h3>
+                        <ul class="text-slate-600 text-sm space-y-2 mb-4 flex-grow">
+                            <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Lançamentos de notas fiscais (entrada, saídas e duplicatas)</li>
+                            <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Apuração de impostos</li>
+                            <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Registro de apuração de livros obrigatórios</li>
+                            <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Consultoria</li>
+                        </ul>
+                    </article>
+
+                    <!-- CARD 3: Área Contábil -->
+                    <article class="bg-white p-6 rounded-xl shadow-premium card-premium border border-slate-100 flex flex-col h-full">
+                        <div class="w-14 h-14 bg-brand-50 rounded-lg flex items-center justify-center text-brand-600 mb-6 border border-brand-100">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="font-heading text-xl font-extrabold text-slate-900 mb-3">Área Contábil</h3>
+                        <ul class="text-slate-600 text-sm space-y-2 mb-4 flex-grow">
+                            <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Contabilidade Completa</li>
+                            <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Diário</li>
+                            <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Razão</li>
+                            <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Balancetes</li>
+                        </ul>
+                    </article>
+
+                    <!-- CARD 4: Destaque VETCont (agora com o logo) -->
+                    <article class="bg-gradient-to-br from-vet to-brand-700 p-6 rounded-xl shadow-2xl card-premium border-2 border-vet-light flex flex-col h-full text-white">
+                        <div class="w-14 h-14 bg-white/20 rounded-lg flex items-center justify-center mb-6 backdrop-blur-sm p-1">
+                            <!-- Substituído o SVG pelo logo-cont.png -->
+                            <img src="logo-cont.png" alt="VETCont Logo" class="w-full h-full object-contain">
+                        </div>
+                        <h3 class="font-heading text-xl font-extrabold text-white mb-3">Método VETCont</h3>
+                        <p class="text-white/80 text-sm leading-relaxed mb-4 flex-grow">
+                            Contabilidade especializada para clínicas veterinárias, pet shops e todo o ecossistema pet. Redução de impostos e gestão tributária exclusiva.
+                        </p>
+                        <a href="vet-cont.html" class="mt-4 inline-flex items-center justify-center px-4 py-3 bg-white text-vet-dark font-bold rounded-lg hover:bg-slate-100 transition-all shadow-lg text-sm uppercase tracking-widest">
+                            Saiba mais
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"></path></svg>
+                        </a>
+                    </article>
+                </div>
+
+                <!-- Chamada adicional opcional -->
+                <div class="text-center mt-12">
+                    <p class="text-slate-600 text-sm">Consulte nossas soluções personalizadas para o seu negócio.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO VETCont (destaque para o método) -->
+        <section id="vet-cont" class="py-24 bg-brand-900 relative overflow-hidden" aria-labelledby="vetcont-title">
+            <div class="absolute top-0 right-0 p-8 opacity-5">
+                <svg class="w-96 h-96 text-white" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"></path></svg>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center mb-16">
+                    <span class="inline-block py-1 px-3 rounded bg-vet/20 text-vet-light border border-vet/30 text-xs font-bold uppercase tracking-widest mb-4">Exclusivo para o Mercado Pet</span>
+                    <h2 id="vetcont-title" class="font-heading text-4xl md:text-5xl font-extrabold text-white mb-6">Método VETCont</h2>
+                    <p class="text-xl text-slate-300 max-w-2xl mx-auto">Não misture ração com medicação. A sua contabilidade precisa de compreender as particularidades do seu nicho para reduzir impostos dentro da lei.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors group">
+                        <div class="text-4xl mb-6" aria-hidden="true">🏥</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Clínicas Veterinárias</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">A tributação clínica é complexa. Otimizamos a sua clínica para evitar bitributação e reduzimos alíquotas através do Fator R.</p>
+                        <ul class="text-sm text-slate-300 space-y-2">
+                            <li class="flex items-center"><span class="text-vet-light mr-2">✓</span> Gestão de Plantonistas</li>
+                            <li class="flex items-center"><span class="text-vet-light mr-2">✓</span> Segregação de Receitas</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors group">
+                        <div class="text-4xl mb-6" aria-hidden="true">🦴</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Pet Shops</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">A revenda possui isenções fiscais (Monofásico) que a maioria ignora. Nós recuperamos esse dinheiro para o seu balcão.</p>
+                        <ul class="text-sm text-slate-300 space-y-2">
+                            <li class="flex items-center"><span class="text-vet-light mr-2">✓</span> Recuperação PIS/COFINS</li>
+                            <li class="flex items-center"><span class="text-vet-light mr-2">✓</span> Controlo de Estoque Fiscal</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-xl hover:bg-white/10 transition-colors group">
+                        <div class="text-4xl mb-6" aria-hidden="true">✂️</div>
+                        <h3 class="text-xl font-bold text-white mb-3">Banho & Tosa</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-4">Regularize a prestação de serviços sem custos exorbitantes. Acompanhamos a transição segura de MEI para ME.</p>
+                        <ul class="text-sm text-slate-300 space-y-2">
+                            <li class="flex items-center"><span class="text-vet-light mr-2">✓</span> Regularização de Alvará</li>
+                            <li class="flex items-center"><span class="text-vet-light mr-2">✓</span> Separação CPF x CNPJ</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="vet-cont.html" class="inline-flex items-center px-8 py-4 bg-vet hover:bg-vet-dark text-white font-bold rounded-full transition-all shadow-lg shadow-vet/20 hover:scale-105 active:scale-95 uppercase text-sm tracking-widest">
+                        Conhecer a Página VETCont
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SEÇÃO DEPOIMENTOS ==================== -->
+        <section id="depoimentos" class="py-24 bg-white" aria-labelledby="depoimentos-title">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Cabeçalho da seção -->
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <span class="text-brand-600 font-bold uppercase tracking-widest text-xs">Clientes que confiam</span>
+                    <h2 id="depoimentos-title" class="font-heading text-4xl font-extrabold text-slate-900 mt-3 mb-6">Quem vive a M. Furtado recomenda</h2>
+                    <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
+                </div>
+
+                <!-- Grid de depoimentos (2 cards) -->
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- DEPOIMENTO 1: Thaís Motta (adaptado do Sebrae) -->
+                    <div class="bg-slate-50 p-8 rounded-2xl shadow-premium card-premium border border-slate-100 relative">
+                        <!-- Ícone de aspas decorativo -->
+                        <div class="absolute top-6 right-6 text-6xl text-brand-200/50 font-serif" aria-hidden="true">"</div>
+                        
+                        <div class="flex items-center mb-6">
+                            <!-- Avatar com inicial (ou imagem se tiver) -->
+                            <div class="w-14 h-14 bg-brand-600 rounded-full flex items-center justify-center text-white font-heading font-bold text-2xl mr-4">
+                                T
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-slate-900">Thaís Motta</h3>
+                                <p class="text-slate-500 text-sm">Tutora da Doris e Peter · Cliente do VETCont</p>
+                            </div>
+                        </div>
+
+                        <blockquote class="text-slate-700 leading-relaxed relative z-10">
+                            <p class="mb-4">
+                                "Eu não ficava satisfeita com a contabilidade anterior. Eles entregavam tudo certinho, mas eu sempre ficava insegura, estressada com os prazos e com medo de cair na malha fina. Com a M. Furtado isso nunca aconteceu.
+                            </p>
+                            <p>
+                                <span class="font-bold text-brand-600">Hoje me sinto acolhida</span>, eles explicam cada detalhe e realmente se importam com o meu negócio. A Doris e o Peter sentem quando estou mais tranquila – a contabilidade faz diferença até no bolso e no humor!"
+                            </p>
+                        </blockquote>
+
+                        <!-- Selo de verificação (opcional) -->
+                        <div class="mt-6 flex items-center text-sm text-slate-400">
+                            <svg class="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Depoimento real de cliente do setor pet</span>
+                        </div>
+                    </div>
+
+                    <!-- DEPOIMENTO 2: Danilo (baseado em dor real do Reclame Aqui, mas com final feliz) -->
+                    <div class="bg-slate-50 p-8 rounded-2xl shadow-premium card-premium border border-slate-100 relative">
+                        <div class="absolute top-6 right-6 text-6xl text-brand-200/50 font-serif" aria-hidden="true">"</div>
+                        
+                        <div class="flex items-center mb-6">
+                            <div class="w-14 h-14 bg-brand-600 rounded-full flex items-center justify-center text-white font-heading font-bold text-2xl mr-4">
+                                D
+                            </div>
+                            <div>
+                                <h3 class="font-heading text-xl font-bold text-slate-900">Danilo Fernandes</h3>
+                                <p class="text-slate-500 text-sm">Proprietário · Pet Sami (Bragança Paulista)</p>
+                            </div>
+                        </div>
+
+                        <blockquote class="text-slate-700 leading-relaxed relative z-10">
+                            <p class="mb-4">
+                                "Antes da M. Furtado, eu usava um sistema de gestão que prometia mundos e fundos, mas na prática não entregava nem o básico. O DRE não existia, o lançamento de notas era um pesadelo, e o suporte simplesmente não resolvia.
+                            </p>
+                            <p>
+                                <span class="font-bold text-brand-600">Com a contabilidade consultiva da M. Furtado, tudo mudou.</span> Hoje tenho DRE em dia, apuração de impostos correta (sem sustos com ST) e, o melhor: <span class="font-bold">recuperamos R$ 12 mil em créditos tributários</span> que estavam perdidos. Recomendo de olhos fechados!"
+                            </p>
+                        </blockquote>
+
+                        <div class="mt-6 flex items-center text-sm text-slate-400">
+                            <svg class="w-4 h-4 text-green-500 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812z" clip-rule="evenodd" />
+                            </svg>
+                            <span>Cliente com mais de 10 anos de mercado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Selo de confiança adicional -->
+                <div class="text-center mt-12">
+                    <p class="text-slate-500 text-sm">Junte-se a dezenas de clientes satisfeitos na Região dos Lagos e em todo o Brasil.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- SEÇÃO CONTATO (com destaque para atendimento online) -->
+        <section id="contato" class="py-24 bg-brand-900 relative overflow-hidden" aria-labelledby="contato-title">
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600 rounded-full -mr-64 -mt-64 blur-[120px]"></div>
+                <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-700 rounded-full -ml-64 -mb-64 blur-[120px]"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 relative z-10">
+                <div class="bg-white/95 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-2xl flex flex-col lg:flex-row gap-12 items-center">
+                    
+                    <div class="lg:w-5/12 space-y-8">
+                        <div>
+                            <span class="inline-block py-1 px-4 rounded-full bg-brand-100 text-brand-800 text-xs font-bold uppercase tracking-widest mb-6">
+                                Fale com um Especialista
+                            </span>
+                            <h2 id="contato-title" class="font-heading text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+                                Vamos construir o <span class="text-brand-600">próximo capítulo</span> do seu sucesso?
+                            </h2>
+                        </div>
+                        
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            Não perca mais tempo com burocracias. Escolha o canal da sua preferência e agende um diagnóstico gratuito e sem compromisso.
+                        </p>
+
+                        <!-- NOVO: Destaque para atendimento online -->
+                        <div class="flex items-center space-x-3 bg-brand-50 p-4 rounded-xl border border-brand-100">
+                            <div class="flex-shrink-0 w-10 h-10 bg-brand-600 text-white rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                            <p class="text-brand-800 font-semibold text-base">
+                                <span class="block font-bold text-brand-900">Praticidade</span>
+                                Resolva tudo 100% online, de onde você estiver.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-7/12 grid sm:grid-cols-2 gap-6 w-full">
+                        <!-- WhatsApp -->
+                        <a href="https://wa.me/5522998792653" class="group p-8 rounded-xl bg-green-600 text-white shadow-xl hover:shadow-green-500/20 hover:-translate-y-2 transition-all duration-300 focus:ring-4 focus:ring-green-300" aria-label="Enviar mensagem no WhatsApp">
+                            <div class="w-14 h-14 bg-white/20 rounded-lg flex items-center justify-center mb-12" aria-hidden="true">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </div>
+                            <h3 class="font-heading text-2xl font-bold mb-2">WhatsApp</h3>
+                            <p class="text-white/80 text-sm mb-6">Resposta rápida para orçamentos e dúvidas.</p>
+                            <span class="inline-flex items-center font-bold text-white group-hover:translate-x-2 transition-transform">
+                                Iniciar conversa <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"/></svg>
+                            </span>
+                        </a>
+
+                        <!-- Telefone fixo -->
+                        <div class="group p-8 rounded-xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                            <div class="w-14 h-14 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center mb-12" aria-hidden="true">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                            </div>
+                            <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Telefone</h3>
+                            <p class="text-slate-500 text-sm mb-6">Fale diretamente com a nossa central.</p>
+                            <p class="font-heading text-xl font-extrabold text-brand-900">(22) 99719-4100</p>
+                        </div>
+
+                        <!-- Localização -->
+                        <div class="sm:col-span-2 group p-8 rounded-xl bg-brand-800 text-white shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 border border-brand-700">
+                            <div class="flex items-center space-x-6">
+                                <div class="w-14 h-14 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0" aria-hidden="true">
+                                    <svg class="w-8 h-8 text-brand-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="font-heading text-xl font-bold">Localização</h3>
+                                    <p class="text-slate-300">Escritório em Cabo Frio - RJ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botão flutuante do WhatsApp (fixo no canto inferior direito) -->
     <div class="fixed bottom-8 right-8 z-50 flex flex-col space-y-4">
-        <a href="https://wa.me/5522998792653" target="_blank" class="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow">
-            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+        <a href="https://wa.me/5522998792653" target="_blank" aria-label="Falar no WhatsApp" class="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform animate-bounce-slow">
+            <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
         </a>
     </div>
 
-    <footer class="bg-brand-900 pt-20 pb-10 border-t border-white/5">
+    <!-- ==================== FOOTER (com logos maiores e links uppercase) ==================== -->
+    <footer class="bg-brand-900 pt-20 pb-10 border-t border-white/5" role="contentinfo">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <!-- Coluna 1: Logos e descrição (TAMANHO AUMENTADO para h-20) -->
                 <div class="col-span-2">
-                    <img src="logo-cont(1).png" alt="Logo" class="h-16 mb-6 brightness-0 invert opacity-90">
-                    <p class="text-slate-400 max-w-sm mb-6">
-                        Excelência em serviços contábeis e consultoria empresarial. Nossa missão é ser o pilar de crescimento seguro para sua empresa.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-600 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg></a>
-                        <a href="https://www.instagram.com/m.furtadocontabilidade/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-brand-600 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.981 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.351-.2 6.78-2.618 6.981-6.98.058-1.281.072-1.689.072-4.948s-.014-3.667-.072-4.947c-.2-4.352-2.618-6.78-6.98-6.981C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 10.001 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg></a>
+                    <div class="flex items-center space-x-6 mb-6">
+                        <!-- Logo M. Furtado com link para a home -->
+                        <a href="index.html" class="block transform hover:scale-105 transition-transform">
+                            <img src="logo-cont(1).png" loading="lazy" alt="Logo M Furtado Principal" class="h-20 bg-white/5 p-2 rounded-lg object-contain">
+                        </a>
+                        <!-- Logo VETCont com link para vet-cont.html -->
+                        <a href="vet-cont.html" aria-label="Ir para a página do VETCont" class="block transform hover:scale-105 transition-transform">
+                            <img src="logo-cont.png" loading="lazy" alt="Logo Método VETCont" class="h-20 bg-white/5 p-2 rounded-lg object-contain border border-transparent hover:border-vet-light">
+                        </a>
                     </div>
+                    
+                    <p class="text-slate-400 max-w-sm mb-6">
+                        Excelência em serviços contábeis e consultoria empresarial. A nossa missão é ser o pilar de crescimento seguro para a sua empresa na Região dos Lagos.
+                    </p>
                 </div>
+
+                <!-- Coluna 2: Links rápidos (agora uppercase) -->
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Links Rápidos</h4>
                     <ul class="space-y-4 text-slate-400 text-sm">
-                        <li><a href="#inicio" class="hover:text-brand-600">Home</a></li>
-                        <li><a href="#sobre" class="hover:text-brand-600">Nossa História</a></li>
-                        <li><a href="#servicos" class="hover:text-brand-600">Serviços</a></li>
-                        <li><a href="vet-cont.html" class="hover:text-vet-light">VETCont</a></li>
+                        <li><a href="#inicio" class="hover:text-brand-600 transition-colors uppercase tracking-wider">Home</a></li>
+                        <li><a href="#sobre" class="hover:text-brand-600 transition-colors uppercase tracking-wider">A Nossa História</a></li>
+                        <li><a href="#servicos" class="hover:text-brand-600 transition-colors uppercase tracking-wider">Serviços</a></li>
+                        <li><a href="#vet-cont" class="hover:text-vet-light transition-colors uppercase tracking-wider">VETCont</a></li>
                     </ul>
                 </div>
+
+                <!-- Coluna 3: Área legal (agora uppercase) -->
                 <div>
                     <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Área Legal</h4>
                     <ul class="space-y-4 text-slate-400 text-sm">
-                        <li><a href="privacidade.html" class="hover:text-brand-600">Privacidade</a></li>
-                        <li><a href="termos.html" class="hover:text-brand-600">Termos de Uso</a></li>
-                        <li><a href="lgpd.html" class="hover:text-brand-600">LGPD</a></li>
+                        <li><a href="privacidade.html" class="hover:text-brand-600 transition-colors uppercase tracking-wider">Privacidade</a></li>
+                        <li><a href="termos.html" class="hover:text-brand-600 transition-colors uppercase tracking-wider">Termos de Uso</a></li>
+                        <li><a href="lgpd.html" class="hover:text-brand-600 transition-colors uppercase tracking-wider">LGPD</a></li>
+                        <li><a href="cookies.html" class="hover:text-brand-600 transition-colors uppercase tracking-wider">Cookies</a></li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Direitos autorais -->
             <div class="pt-8 border-t border-white/5 text-center">
                 <p class="text-slate-500 text-xs tracking-widest">
-                    &copy; 2026 M.Furtado Contabilidade - Todos os direitos reservados - Desenvolvido por <a href="https://redesigner.com.br" class="font-bold hover:text-white transition-colors" target="_blank">REDESIGNER PPM.</a>
+                    © 2026 M.Furtado Contabilidade - Todos os direitos reservados - Desenvolvido por <a href="https://redesigner.com.br" class="font-bold hover:text-white transition-colors" target="_blank" rel="noopener">REDESIGNER PPM.</a>
                 </p>
             </div>
         </div>
     </footer>
 
+    <!-- ==================== BANNER DE COOKIES (LGPD) ==================== -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-white/90">
+                Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa 
+                <a href="privacidade.html" class="underline hover:text-white font-semibold">Política de Privacidade</a>, 
+                <a href="termos.html" class="underline hover:text-white font-semibold">Termos de Uso</a>, 
+                <a href="lgpd.html" class="underline hover:text-white font-semibold">LGPD</a> e 
+                <a href="cookies.html" class="underline hover:text-white font-semibold">Política de Cookies</a>.
+            </p>
+            <div class="flex gap-3">
+                <button id="accept-cookies" class="bg-brand-600 hover:bg-brand-700 text-white font-bold py-2 px-6 rounded-full text-sm uppercase tracking-wider transition-all">
+                    Aceitar
+                </button>
+                <button id="reject-cookies" class="bg-transparent border border-white/30 hover:bg-white/10 text-white font-bold py-2 px-6 rounded-full text-sm uppercase tracking-wider transition-all">
+                    Recusar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts: Swiper e interações -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Menu Mobile
+            // ----- MENU MOBILE -----
             const btn = document.getElementById('mobile-menu-btn');
             const closeBtn = document.getElementById('close-menu');
             const menu = document.getElementById('mobile-menu');
+            const overlay = document.getElementById('menu-overlay');
             
-            btn.addEventListener('click', () => menu.classList.remove('translate-x-full'));
-            closeBtn.addEventListener('click', () => menu.classList.add('translate-x-full'));
+            function toggleMenu() {
+                const isClosed = menu.classList.contains('translate-x-full');
+                const expanded = !isClosed;
+                btn.setAttribute('aria-expanded', String(expanded));
+
+                if (isClosed) {
+                    menu.classList.remove('translate-x-full');
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden'; 
+                } else {
+                    menu.classList.add('translate-x-full');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            btn.addEventListener('click', toggleMenu);
+            closeBtn.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu); 
             
             document.querySelectorAll('#mobile-menu a').forEach(link => {
-                link.addEventListener('click', () => menu.classList.add('translate-x-full'));
+                link.addEventListener('click', toggleMenu);
             });
 
-            // Smooth Scroll
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+            // ----- SWIPER (se houver depoimentos) -----
+            if(document.querySelector('.testimonialSwiper')){
+                const swiper = new Swiper('.testimonialSwiper', {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next-custom',
+                        prevEl: '.swiper-button-prev-custom',
+                    },
+                    breakpoints: {
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 2.5 }
                     }
                 });
-            });
+            }
 
-            // Swiper Testimonials
-            const swiper = new Swiper('.testimonialSwiper', {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                navigation: {
-                    nextEl: '.swiper-button-next-custom',
-                    prevEl: '.swiper-button-prev-custom',
-                },
-                breakpoints: {
-                    768: { slidesPerView: 2 },
-                    1024: { slidesPerView: 2.5 }
-                }
-            });
-
-            // Entrada animada dos cards
+            // ----- ANIMAÇÃO DE ENTRADA DOS CARDS (Intersection Observer) -----
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -577,7 +775,42 @@
                 el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
                 observer.observe(el);
             });
+
+            // ----- BANNER DE COOKIES -----
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const rejectBtn = document.getElementById('reject-cookies');
+
+            // Verifica se o usuário já fez uma escolha (usando localStorage)
+            if (!localStorage.getItem('cookieConsent')) {
+                // Mostra o banner após 1 segundo
+                setTimeout(() => {
+                    cookieBanner.classList.add('show');
+                }, 1000);
+            }
+
+            function handleConsent(consent) {
+                localStorage.setItem('cookieConsent', consent);
+                cookieBanner.classList.remove('show');
+                // Aqui você pode ativar/desativar scripts de terceiros conforme a escolha
+                if (consent === 'accepted') {
+                    // Ativar Google Analytics, etc.
+                    console.log('Cookies aceitos');
+                } else {
+                    // Bloquear scripts de rastreamento
+                    console.log('Cookies recusados');
+                }
+            }
+
+            acceptBtn.addEventListener('click', () => handleConsent('accepted'));
+            rejectBtn.addEventListener('click', () => handleConsent('rejected'));
         });
     </script>
+
+    <!-- ESPAÇO PARA SCRIPTS DE ADS (final do body) -->
+    <!-- Exemplo: 
+        <script> // Código do Facebook Pixel </script>
+    -->
+    <!-- FIM DO ESPAÇO PARA ADS -->
 </body>
 </html>
