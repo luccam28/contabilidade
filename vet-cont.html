@@ -193,14 +193,7 @@
                                 Nossas Soluções
                             </a>
                         </div>
-                        <div class="flex items-center space-x-6 pt-8 border-t border-white/10">
-                            <div class="flex -space-x-3">
-                                <div class="w-10 h-10 rounded-full bg-brand-600 border-2 border-white flex items-center justify-center text-[10px] text-white font-bold">+50</div>
-                                <div class="w-10 h-10 rounded-full bg-vet-light border-2 border-white"></div>
-                                <div class="w-10 h-10 rounded-full bg-emerald-200 border-2 border-white"></div>
-                            </div>
-                            <p class="text-sm text-slate-300">Clientes do segmento Pet atendidos</p>
-                        </div>
+                        
                     </div>
                     
                     <div class="hidden lg:block relative">
@@ -471,7 +464,7 @@
                             </div>
                             <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Telefone</h3>
                             <p class="text-slate-500 text-sm mb-6">Fale diretamente com nosso especialista.</p>
-                            <p class="font-heading text-xl font-extrabold text-brand-900">(22) 99719-4100</p>
+                            <p class="font-heading text-xl font-extrabold text-brand-900">(22) 99879-2653</p>
                         </div>
 
                         <!-- Localização -->
@@ -499,61 +492,90 @@
         </a>
     </div>
 
-   <!-- ==================== FOOTER (sem hover nos links) ==================== -->
-<footer class="bg-brand-900 pt-20 pb-10 border-t border-white/5" role="contentinfo">
-    <div class="max-w-7xl mx-auto px-4">
-        <div class="grid md:grid-cols-4 gap-12 mb-16">
-            <!-- Coluna 1: Logos e descrição -->
-            <div class="col-span-2">
-                <div class="flex items-center space-x-6 mb-6">
-                    <!-- Logo M. Furtado com link para index.html -->
-                    <a href="index.html" class="block transform hover:scale-105 transition-transform">
-                        <img src="logo-cont(1).png" loading="lazy" alt="Logo M Furtado Principal" class="h-20 bg-white/5 p-2 rounded-lg object-contain">
-                    </a>
-                    <!-- Logo VETCont com link para vet-cont.html -->
-                    <a href="vet-cont.html" aria-label="Ir para a página do VETCont" class="block transform hover:scale-105 transition-transform">
-                        <img src="logo-cont.png" loading="lazy" alt="Logo Método VETCont" class="h-20 bg-white/5 p-2 rounded-lg object-contain border border-transparent">
-                    </a>
-                </div>
-                
-                <p class="text-slate-400 max-w-sm mb-6">
-                    Excelência em serviços contábeis e consultoria empresarial. A nossa missão é ser o pilar de crescimento seguro para a sua empresa na Região dos Lagos.
-                </p>
+    <!-- ==================== MODAL IRPF 2026 ==================== -->
+    <div id="irpf-modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true">
+        <div class="absolute inset-0 bg-brand-900/80 backdrop-blur-sm modal-backdrop"></div>
+        
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 transform scale-95 transition-transform duration-300" id="irpf-content" role="dialog" aria-labelledby="irpf-title">
+            <button id="close-irpf" class="absolute top-4 right-4 text-slate-400 hover:text-brand-600 transition-colors" aria-label="Fechar aviso">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="w-16 h-16 bg-brand-50 rounded-full flex items-center justify-center text-brand-600 mb-6 mx-auto border border-brand-100">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
             </div>
-
-            <!-- Coluna 2: Links rápidos (uppercase, sem hover) -->
-            <div>
-                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Links Rápidos</h4>
-                <ul class="space-y-4 text-slate-400 text-sm">
-                    <li><a href="index.html" class="uppercase tracking-wider">Site Principal</a></li>
-                    <li><a href="#sobre" class="uppercase tracking-wider">Sobre o VETCont</a></li>
-                    <li><a href="#solucoes" class="uppercase tracking-wider">Segmentos Atendidos</a></li>
-                    <li><a href="#contato" class="uppercase tracking-wider">Consultoria</a></li>
-                </ul>
-            </div>
-
-            <!-- Coluna 3: Área legal (uppercase, sem hover) -->
-            <div>
-                <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Área Legal</h4>
-                <ul class="space-y-4 text-slate-400 text-sm">
-                    <li><a href="privacidade.html" class="uppercase tracking-wider">Privacidade</a></li>
-                    <li><a href="termos.html" class="uppercase tracking-wider">Termos de Uso</a></li>
-                    <li><a href="lgpd.html" class="uppercase tracking-wider">LGPD</a></li>
-                    <li><a href="cookies.html" class="uppercase tracking-wider">Cookies</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Direitos autorais com link para REDESIGNER PPM -->
-        <div class="pt-8 border-t border-white/5 text-center">
-            <p class="text-slate-500 text-xs tracking-widest">
-                © 2026 VETCont | M. Furtado Contabilidade | Monique Furtado - CRCRJ 134623/O-1- Todos os direitos reservados Desenvolvido por <a href="https://redesigner.com.br" class="font-bold hover:text-white transition-colors" target="_blank" rel="noopener">REDESIGNER PPM.</a>
+            
+            <h3 id="irpf-title" class="font-heading text-2xl font-extrabold text-slate-900 text-center mb-2">Imposto de Renda 2026</h3>
+            <p class="text-slate-600 text-center mb-6 text-sm leading-relaxed">
+                O prazo para a entrega da declaração já começou! Evite malha fina, multas pesadas e dores de cabeça. Deixe a burocracia com a nossa equipe de especialistas.
             </p>
+            
+            <div class="bg-brand-50 p-4 rounded-xl text-center mb-6 border border-brand-100">
+                <span class="block text-xs font-bold text-brand-600 uppercase tracking-wider mb-1">Prazo Final</span>
+                <span class="font-heading font-extrabold text-brand-900 text-xl">29 de Maio de 2026</span>
+            </div>
+            
+            <a href="https://wa.me/5522998792653" target="_blank" class="block w-full text-center px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-800 transition-all shadow-lg hover:-translate-y-1 active:scale-95 text-sm uppercase tracking-widest">
+                Fazer meu IRPF Agora
+            </a>
         </div>
     </div>
-</footer>
 
-    <!-- ==================== BANNER DE COOKIES ==================== -->
+    <!-- ==================== FOOTER (sem hover nos links) ==================== -->
+    <footer class="bg-brand-900 pt-20 pb-10 border-t border-white/5" role="contentinfo">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <!-- Coluna 1: Logos e descrição -->
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-6 mb-6">
+                        <!-- Logo M. Furtado com link para index.html -->
+                        <a href="index.html" class="block transform hover:scale-105 transition-transform">
+                            <img src="logo-cont(1).png" loading="lazy" alt="Logo M Furtado Principal" class="h-20 bg-white/5 p-2 rounded-lg object-contain">
+                        </a>
+                        <!-- Logo VETCont com link para vet-cont.html -->
+                        <a href="vet-cont.html" aria-label="Ir para a página do VETCont" class="block transform hover:scale-105 transition-transform">
+                            <img src="logo-cont.png" loading="lazy" alt="Logo Método VETCont" class="h-20 bg-white/5 p-2 rounded-lg object-contain border border-transparent">
+                        </a>
+                    </div>
+                    
+                    <p class="text-slate-400 max-w-sm mb-6">
+                        Excelência em serviços contábeis e consultoria empresarial. A nossa missão é ser o pilar de crescimento seguro para a sua empresa na Região dos Lagos.
+                    </p>
+                </div>
+
+                <!-- Coluna 2: Links rápidos (uppercase, sem hover) -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Links Rápidos</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="index.html" class="uppercase tracking-wider">Site Principal</a></li>
+                        <li><a href="#sobre" class="uppercase tracking-wider">Sobre o VETCont</a></li>
+                        <li><a href="#solucoes" class="uppercase tracking-wider">Segmentos Atendidos</a></li>
+                        <li><a href="#contato" class="uppercase tracking-wider">Consultoria</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Área legal (uppercase, sem hover) -->
+                <div>
+                    <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-xs">Área Legal</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm">
+                        <li><a href="privacidade.html" class="uppercase tracking-wider">Privacidade</a></li>
+                        <li><a href="termos.html" class="uppercase tracking-wider">Termos de Uso</a></li>
+                        <li><a href="lgpd.html" class="uppercase tracking-wider">LGPD</a></li>
+                        <li><a href="cookies.html" class="uppercase tracking-wider">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Direitos autorais com link para REDESIGNER PPM -->
+            <div class="pt-8 border-t border-white/5 text-center">
+                <p class="text-slate-500 text-xs tracking-widest">
+                    © 2026 VETCont | M. Furtado Contabilidade | Monique Furtado - CRCRJ 134623/O-1- Todos os direitos reservados Desenvolvido por <a href="https://redesigner.com.br" class="font-bold hover:text-white transition-colors" target="_blank" rel="noopener">REDESIGNER PPM.</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BANNER DE COOKIES (LGPD) ==================== -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-sm text-white/90">
@@ -622,29 +644,80 @@
                 observer.observe(el);
             });
 
-            // ----- BANNER DE COOKIES -----
+            // ----- MODAL IRPF 2026 (com controle de ordem) -----
+            const irpfModal = document.getElementById('irpf-modal');
+            const irpfContent = document.getElementById('irpf-content');
+            const closeIrpfBtn = document.getElementById('close-irpf');
+            const irpfBackdrop = irpfModal?.querySelector('.modal-backdrop');
+
+            // Datas oficiais do IRPF 2026 (Horário de Brasília)
+            const startDate = new Date('2026-03-23T00:00:00-03:00');
+            const endDate = new Date('2026-05-29T23:59:59-03:00');
+            const now = new Date();
+            const isIrpfDismissed = sessionStorage.getItem('irpf2026_dismissed');
+
+            let irpfWasShown = false;
+
+            // Função para mostrar o banner de cookies (se ainda não consentido)
+            function showCookieBannerIfNeeded() {
+                const cookieBanner = document.getElementById('cookie-banner');
+                if (!cookieBanner) return;
+                if (localStorage.getItem('cookieConsent')) return;
+                cookieBanner.classList.add('show');
+            }
+
+            // Fecha o modal e, depois, exibe o banner
+            function closeIrpfModal() {
+                if (!irpfModal) return;
+                irpfModal.classList.add('opacity-0', 'pointer-events-none');
+                irpfModal.setAttribute('aria-hidden', 'true');
+                irpfContent?.classList.remove('scale-100');
+                irpfContent?.classList.add('scale-95');
+                sessionStorage.setItem('irpf2026_dismissed', 'true');
+                // Após fechar, mostra o banner
+                showCookieBannerIfNeeded();
+            }
+
+            // Verifica se o modal deve ser exibido
+            if (irpfModal && now >= startDate && now <= endDate && !isIrpfDismissed) {
+                irpfWasShown = true;
+                setTimeout(() => {
+                    irpfModal.classList.remove('opacity-0', 'pointer-events-none');
+                    irpfModal.setAttribute('aria-hidden', 'false');
+                    irpfContent?.classList.remove('scale-95');
+                    irpfContent?.classList.add('scale-100');
+                }, 2000);
+            }
+
+            if (closeIrpfBtn && irpfBackdrop) {
+                closeIrpfBtn.addEventListener('click', closeIrpfModal);
+                irpfBackdrop.addEventListener('click', closeIrpfModal);
+            }
+
+            // ----- BANNER DE COOKIES (com controle de ordem) -----
             const cookieBanner = document.getElementById('cookie-banner');
             const acceptBtn = document.getElementById('accept-cookies');
             const rejectBtn = document.getElementById('reject-cookies');
 
-            if (!localStorage.getItem('cookieConsent')) {
-                setTimeout(() => {
-                    cookieBanner.classList.add('show');
-                }, 1000);
+            // Se o modal NÃO foi exibido, mostra o banner imediatamente
+            if (!irpfWasShown) {
+                showCookieBannerIfNeeded();
             }
 
             function handleConsent(consent) {
                 localStorage.setItem('cookieConsent', consent);
                 cookieBanner.classList.remove('show');
                 if (consent === 'accepted') {
-                    console.log('Cookies aceitos');
+                    console.log('Cookies aceitos — ative scripts de terceiros aqui');
                 } else {
-                    console.log('Cookies recusados');
+                    console.log('Cookies recusados — bloqueie scripts de terceiros aqui');
                 }
             }
 
-            acceptBtn.addEventListener('click', () => handleConsent('accepted'));
-            rejectBtn.addEventListener('click', () => handleConsent('rejected'));
+            if (acceptBtn && rejectBtn) {
+                acceptBtn.addEventListener('click', () => handleConsent('accepted'));
+                rejectBtn.addEventListener('click', () => handleConsent('rejected'));
+            }
         });
     </script>
 </body>

@@ -95,7 +95,7 @@
 
     <!-- Estilos customizados (além do Tailwind) -->
     <style>
-        html { scroll-padding-top: 100px; }
+        html { scroll-padding-top: 130px; } /* Aumentado para compensar o header maior */
         .glass-header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
@@ -166,14 +166,14 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased font-sans">
 
-    <!-- ==================== HEADER FIXO (com logo maior) ==================== -->
+    <!-- ==================== HEADER FIXO (com logo maior e destacada) ==================== -->
     <header class="fixed w-full z-50 glass-header" role="banner">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-22 py-4">
-                <!-- Logo principal com link para a home (TAMANHO AUMENTADO para h-16) -->
+                <!-- Logo principal com link para a home (TAMANHO AUMENTADO E DESTAQUE) -->
                 <a href="index.html" class="flex items-center space-x-3 group cursor-pointer" aria-label="Voltar à página inicial">
-    <img src="logo-cont(1).png" alt="M. Furtado Logo" class="h-20 w-auto drop-shadow-sm group-hover:scale-105 transition-transform">
-</a>
+                    <img src="logo-cont(1).png" alt="M. Furtado Logo" class="h-28 w-auto drop-shadow-lg group-hover:scale-105 transition-transform">
+                </a>
 
                 <!-- Navegação para desktop -->
                 <nav class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Navegação Principal">
@@ -212,8 +212,8 @@
     <!-- ==================== CONTEÚDO PRINCIPAL ==================== -->
     <main role="main">
 
-        <!-- SEÇÃO HERO (início) -->
-        <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden bg-brand-900" aria-labelledby="hero-title">
+        <!-- SEÇÃO HERO (início) - com padding superior ajustado -->
+        <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden bg-brand-900 pt-40 pb-32" aria-labelledby="hero-title">
             <div class="absolute inset-0 z-0">
                 <div class="absolute inset-0 bg-gradient-to-br from-brand-900/95 to-brand-700/90"></div>
             </div>
@@ -221,7 +221,7 @@
             <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-600/30 rounded-full blur-[120px]"></div>
             <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-800/50 rounded-full blur-[120px]"></div>
 
-            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
                     <div class="space-y-8">
                         <div class="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-md border border-white/10 px-4 py-2 rounded-full">
@@ -291,52 +291,53 @@
 
         <!-- SEÇÃO SOBRE -->
         <section id="sobre" class="py-24 bg-white" aria-labelledby="sobre-title">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row items-start gap-16">
-            
-            <div class="md:w-1/2">
-                <div class="relative">
-                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-100 rounded-lg z-0"></div>
-                    <img src="m-furtado.png" loading="lazy" alt="Equipa M Furtado Contabilidade" class="relative z-10 rounded-lg shadow-premium border border-slate-100 w-full h-auto">
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-100 rounded-lg z-0"></div>
-                </div>
-                
-                <div class="mt-14 relative z-10 pl-4 border-l-4 border-brand-600">
-                    <h3 class="font-heading text-2xl font-extrabold text-slate-900 leading-tight">Monique Furtado</h3>
-                    <p class="text-brand-600 font-bold text-sm mb-3">CRCRJ 134623/O-1</p>
-                    <ul class="text-slate-600 text-sm space-y-2">
-                        <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Técnico em Contabilidade e Finanças</li>
-                        <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Bacharel em Ciências Contábeis</li>
-                        <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Pós Graduada em Direito e Planejamento Tributário</li>
-                    </ul>
-                </div>
-            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-start gap-16">
+                    
+                    <div class="md:w-1/2">
+                        <div class="relative">
+                            <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-100 rounded-lg z-0"></div>
+                            <img src="m-furtado.png" loading="lazy" alt="Equipa M Furtado Contabilidade" class="relative z-10 rounded-lg shadow-premium border border-slate-100 w-full h-auto">
+                            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-slate-100 rounded-lg z-0"></div>
+                        </div>
+                        
+                        <div class="mt-14 relative z-10 pl-4 border-l-4 border-brand-600">
+                            <h3 class="font-heading text-2xl font-extrabold text-slate-900 leading-tight">Monique Furtado</h3>
+                            <p class="text-brand-600 font-bold text-sm mb-3">CRCRJ 134623/O-1</p>
+                            <ul class="text-slate-600 text-sm space-y-2">
+                                <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Técnico em Contabilidade e Finanças</li>
+                                <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Bacharel em Ciências Contábeis</li>
+                                <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Pós Graduada em Direito e Planejamento Tributário</li>
+                            </ul>
+                        </div>
+                    </div>
 
-            <div class="md:w-1/2 space-y-6">
-                <h2 id="sobre-title" class="font-heading text-4xl font-extrabold text-slate-900 leading-tight">
-                    O seu negócio não pode depender da <span class="text-brand-600">sorte</span>.
-                </h2>
-                <p class="text-lg text-slate-600 leading-relaxed">
-                    A M. Furtado nasceu para abolir a "contabilidade de gaveta". Não nos limitamos a enviar guias de impostos; auditamos os seus números para destrancar oportunidades de poupança financeira. Atendemos em Todo o Território Nacional, aliando tecnologia a uma proximidade real.
-                </p>
-                <ul class="space-y-4" aria-label="Diferenciais">
-                    <li class="flex items-start space-x-3">
-                        <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center" aria-hidden="true">✓</div>
-                        <span class="text-slate-700 font-medium">Contabilidade Consultiva: Decisões estratégicas baseadas em dados reais.</span>
-                    </li>
-                    <li class="flex items-start space-x-3">
-                        <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center" aria-hidden="true">✓</div>
-                        <span class="text-slate-700 font-medium">Inteligência Tributária: Otimização de impostos e recuperação de créditos fiscais.</span>
-                    </li>
-                    <li class="flex items-start space-x-3">
-                        <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center" aria-hidden="true">✓</div>
-                        <span class="text-slate-700 font-medium">Blindagem Empresarial: Segurança total nas áreas trabalhista, fiscal e contábil.</span>
-                    </li>
-                </ul>
+                    <div class="md:w-1/2 space-y-6">
+                        <h2 id="sobre-title" class="font-heading text-4xl font-extrabold text-slate-900 leading-tight">
+                            O seu negócio não pode depender da <span class="text-brand-600">sorte</span>.
+                        </h2>
+                        <p class="text-lg text-slate-600 leading-relaxed">
+                            A M. Furtado nasceu para abolir a "contabilidade de gaveta". Não nos limitamos a enviar guias de impostos; auditamos os seus números para destrancar oportunidades de poupança financeira. Atendemos em Todo o Território Nacional, aliando tecnologia a uma proximidade real.
+                        </p>
+                        <ul class="space-y-4" aria-label="Diferenciais">
+                            <li class="flex items-start space-x-3">
+                                <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center" aria-hidden="true">✓</div>
+                                <span class="text-slate-700 font-medium">Contabilidade Consultiva: Decisões estratégicas baseadas em dados reais.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center" aria-hidden="true">✓</div>
+                                <span class="text-slate-700 font-medium">Inteligência Tributária: Otimização de impostos e recuperação de créditos fiscais.</span>
+                            </li>
+                            <li class="flex items-start space-x-3">
+                                <div class="mt-1 flex-shrink-0 w-5 h-5 bg-brand-600 text-white rounded-full flex items-center justify-center" aria-hidden="true">✓</div>
+                                <span class="text-slate-700 font-medium">Blindagem Empresarial: Segurança total nas áreas trabalhista, fiscal e contábil.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
             </div>
-            
-        </div> </div>
-</section>
+        </section>
 
         <!-- ==================== SEÇÃO SERVIÇOS (ATUALIZADA) ==================== -->
         <section id="servicos" class="py-24 bg-slate-50" aria-labelledby="servicos-title">
@@ -631,7 +632,7 @@
                             </div>
                             <h3 class="font-heading text-2xl font-bold text-slate-900 mb-2">Telefone</h3>
                             <p class="text-slate-500 text-sm mb-6">Fale diretamente com a nossa central.</p>
-                            <p class="font-heading text-xl font-extrabold text-brand-900">(22) 99719-4100</p>
+                            <p class="font-heading text-xl font-extrabold text-brand-900"> (22) 99879-2653</p>
                         </div>
 
                         <!-- Localização -->
@@ -712,6 +713,35 @@
             </div>
         </div>
     </footer>
+
+    <!-- ==================== MODAL IRPF 2026 ==================== -->
+    <div id="irpf-modal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" aria-hidden="true">
+        <div class="absolute inset-0 bg-brand-900/80 backdrop-blur-sm modal-backdrop"></div>
+        
+        <div class="relative bg-white rounded-2xl shadow-2xl w-full max-w-md p-8 transform scale-95 transition-transform duration-300" id="irpf-content" role="dialog" aria-labelledby="irpf-title">
+            <button id="close-irpf" class="absolute top-4 right-4 text-slate-400 hover:text-brand-600 transition-colors" aria-label="Fechar aviso">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            
+            <div class="w-16 h-16 bg-brand-50 rounded-full flex items-center justify-center text-brand-600 mb-6 mx-auto border border-brand-100">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+            </div>
+            
+            <h3 id="irpf-title" class="font-heading text-2xl font-extrabold text-slate-900 text-center mb-2">Imposto de Renda 2026</h3>
+            <p class="text-slate-600 text-center mb-6 text-sm leading-relaxed">
+                O prazo para a entrega da declaração já começou! Evite malha fina, multas pesadas e dores de cabeça. Deixe a burocracia com a nossa equipe de especialistas.
+            </p>
+            
+            <div class="bg-brand-50 p-4 rounded-xl text-center mb-6 border border-brand-100">
+                <span class="block text-xs font-bold text-brand-600 uppercase tracking-wider mb-1">Prazo Final</span>
+                <span class="font-heading font-extrabold text-brand-900 text-xl">29 de Maio de 2026</span>
+            </div>
+            
+            <a href="https://wa.me/5522998792653" target="_blank" class="block w-full text-center px-6 py-4 bg-brand-600 text-white font-bold rounded-xl hover:bg-brand-800 transition-all shadow-lg hover:-translate-y-1 active:scale-95 text-sm uppercase tracking-widest">
+                Fazer meu IRPF Agora
+            </a>
+        </div>
+    </div>
 
     <!-- ==================== BANNER DE COOKIES (LGPD) ==================== -->
     <div id="cookie-banner" class="cookie-banner">
@@ -808,35 +838,6 @@
                 observer.observe(el);
             });
 
-            // ----- BANNER DE COOKIES -----
-            const cookieBanner = document.getElementById('cookie-banner');
-            const acceptBtn = document.getElementById('accept-cookies');
-            const rejectBtn = document.getElementById('reject-cookies');
-
-            // Verifica se o usuário já fez uma escolha (usando localStorage)
-            if (!localStorage.getItem('cookieConsent')) {
-                // Mostra o banner após 1 segundo
-                setTimeout(() => {
-                    cookieBanner.classList.add('show');
-                }, 1000);
-            }
-
-            function handleConsent(consent) {
-                localStorage.setItem('cookieConsent', consent);
-                cookieBanner.classList.remove('show');
-                // Aqui você pode ativar/desativar scripts de terceiros conforme a escolha
-                if (consent === 'accepted') {
-                    // Ativar Google Analytics, etc.
-                    console.log('Cookies aceitos');
-                } else {
-                    // Bloquear scripts de rastreamento
-                    console.log('Cookies recusados');
-                }
-            }
-
-            acceptBtn.addEventListener('click', () => handleConsent('accepted'));
-            rejectBtn.addEventListener('click', () => handleConsent('rejected'));
-
             // ----- ACORDEÃO FAQ -----
             const accordionBtns = document.querySelectorAll('.accordion-btn');
             
@@ -845,11 +846,9 @@
                     const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
                     this.setAttribute('aria-expanded', expanded);
                     
-                    // Rotaciona a seta
                     const icon = this.querySelector('svg');
                     icon.classList.toggle('rotate-180', expanded);
                     
-                    // Abre/fecha o conteúdo
                     const content = this.nextElementSibling;
                     if (expanded) {
                         content.style.maxHeight = content.scrollHeight + 'px';
@@ -858,6 +857,82 @@
                     }
                 });
             });
+
+            // ----- CONTROLE DE ORDEM: MODAL IRPF -> BANNER COOKIES -----
+            const irpfModal = document.getElementById('irpf-modal');
+            const irpfContent = document.getElementById('irpf-content');
+            const closeIrpfBtn = document.getElementById('close-irpf');
+            const irpfBackdrop = irpfModal?.querySelector('.modal-backdrop');
+
+            const cookieBanner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const rejectBtn = document.getElementById('reject-cookies');
+
+            // Período do IRPF 2026 (Horário de Brasília)
+            const startDate = new Date('2026-03-23T00:00:00-03:00');
+            const endDate = new Date('2026-05-29T23:59:59-03:00');
+            const now = new Date();
+            const isIrpfDismissed = sessionStorage.getItem('irpf2026_dismissed');
+
+            let irpfWasShown = false; // controle se o modal foi exibido
+
+            // Função para mostrar o banner de cookies (se consentimento ainda não foi dado)
+            function showCookieBannerIfNeeded() {
+                if (!cookieBanner) return;
+                if (localStorage.getItem('cookieConsent')) return;
+                cookieBanner.classList.add('show');
+            }
+
+            // Fechar modal IRPF e então mostrar o banner de cookies
+            function closeIrpfModal() {
+                if (!irpfModal) return;
+                irpfModal.classList.add('opacity-0', 'pointer-events-none');
+                irpfModal.setAttribute('aria-hidden', 'true');
+                irpfContent?.classList.remove('scale-100');
+                irpfContent?.classList.add('scale-95');
+                sessionStorage.setItem('irpf2026_dismissed', 'true');
+
+                // Agora que o modal foi fechado, exibe o banner
+                showCookieBannerIfNeeded();
+            }
+
+            // Verifica se o modal IRPF deve ser exibido
+            if (irpfModal && now >= startDate && now <= endDate && !isIrpfDismissed) {
+                irpfWasShown = true;
+                setTimeout(() => {
+                    irpfModal.classList.remove('opacity-0', 'pointer-events-none');
+                    irpfModal.setAttribute('aria-hidden', 'false');
+                    irpfContent?.classList.remove('scale-95');
+                    irpfContent?.classList.add('scale-100');
+                }, 2000);
+            }
+
+            // Adiciona eventos de fechamento do modal
+            if (closeIrpfBtn && irpfBackdrop) {
+                closeIrpfBtn.addEventListener('click', closeIrpfModal);
+                irpfBackdrop.addEventListener('click', closeIrpfModal);
+            }
+
+            // Se o modal NÃO foi exibido (fora do período ou já descartado), mostra o banner diretamente
+            if (!irpfWasShown) {
+                showCookieBannerIfNeeded();
+            }
+
+            // ----- FUNÇÕES DO BANNER DE COOKIES -----
+            function handleConsent(consent) {
+                localStorage.setItem('cookieConsent', consent);
+                cookieBanner.classList.remove('show');
+                if (consent === 'accepted') {
+                    console.log('Cookies aceitos — ative scripts de terceiros aqui');
+                } else {
+                    console.log('Cookies recusados — bloqueie scripts de terceiros aqui');
+                }
+            }
+
+            if (acceptBtn && rejectBtn) {
+                acceptBtn.addEventListener('click', () => handleConsent('accepted'));
+                rejectBtn.addEventListener('click', () => handleConsent('rejected'));
+            }
         });
     </script>
 
