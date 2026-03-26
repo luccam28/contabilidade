@@ -350,9 +350,7 @@
                     <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
                 </div>
 
-                <!-- GRADE DE CARDS: 3 cards das áreas + 1 card destaque VETCont -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <!-- CARD 1: Área Trabalhista -->
+                <div class="grid md:grid-cols-3 gap-8">
                     <article class="bg-white p-6 rounded-xl shadow-premium card-premium border border-slate-100 flex flex-col h-full">
                         <div class="w-14 h-14 bg-brand-50 rounded-lg flex items-center justify-center text-brand-600 mb-6 border border-brand-100">
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
@@ -364,7 +362,6 @@
                         </ul>
                     </article>
 
-                    <!-- CARD 2: Área Fiscal -->
                     <article class="bg-white p-6 rounded-xl shadow-premium card-premium border border-slate-100 flex flex-col h-full">
                         <div class="w-14 h-14 bg-brand-50 rounded-lg flex items-center justify-center text-brand-600 mb-6 border border-brand-100">
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
@@ -378,7 +375,6 @@
                         </ul>
                     </article>
 
-                    <!-- CARD 3: Área Contábil -->
                     <article class="bg-white p-6 rounded-xl shadow-premium card-premium border border-slate-100 flex flex-col h-full">
                         <div class="w-14 h-14 bg-brand-50 rounded-lg flex items-center justify-center text-brand-600 mb-6 border border-brand-100">
                             <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
@@ -391,25 +387,8 @@
                             <li class="flex items-start"><span class="text-brand-600 mr-2 font-bold">•</span> Balancetes</li>
                         </ul>
                     </article>
-
-                    <!-- CARD 4: Destaque VETCont (agora com o logo) -->
-                    <article class="bg-gradient-to-br from-vet to-brand-700 p-6 rounded-xl shadow-2xl card-premium border-2 border-vet-light flex flex-col h-full text-white">
-                        <div class="w-14 h-14 bg-white/20 rounded-lg flex items-center justify-center mb-6 backdrop-blur-sm p-1">
-                            <!-- Substituído o SVG pelo logo-cont.png -->
-                            <img src="logo-cont.png" alt="VETCont Logo" class="w-full h-full object-contain">
-                        </div>
-                        <h3 class="font-heading text-xl font-extrabold text-white mb-3">VETCont</h3>
-                        <p class="text-white/80 text-sm leading-relaxed mb-4 flex-grow">
-                            Contabilidade especializada para clínicas veterinárias, pet shops e todo o ecossistema pet. Redução de impostos e gestão tributária exclusiva.
-                        </p>
-                        <a href="vet-cont.html" class="mt-4 inline-flex items-center justify-center px-4 py-3 bg-white text-vet-dark font-bold rounded-lg hover:bg-slate-100 transition-all shadow-lg text-sm uppercase tracking-widest">
-                            Saiba mais
-                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7-7 7"></path></svg>
-                        </a>
-                    </article>
                 </div>
 
-                <!-- Chamada adicional opcional -->
                 <div class="text-center mt-12">
                     <p class="text-slate-600 text-sm">Consulte nossas soluções personalizadas para o seu negócio.</p>
                 </div>
@@ -418,23 +397,24 @@
 
         <!-- ==================== NOVA SEÇÃO IRRF (MALHA FINA) ==================== -->
         <section id="irrf" class="py-24 bg-white relative overflow-hidden" aria-labelledby="irrf-title">
-            <!-- Elementos decorativos -->
             <div class="absolute top-0 right-0 w-80 h-80 bg-brand-50 rounded-full -mr-40 -mt-40 blur-[100px] opacity-60 pointer-events-none"></div>
             <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-50 rounded-full -ml-40 -mb-40 blur-[100px] opacity-60 pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-brand-600 font-bold uppercase tracking-widest text-xs">Imposto de Renda e Malha Fina</span>
-                    <h2 id="irrf-title" class="font-heading text-4xl font-extrabold text-slate-900 mt-3 mb-6">Sua declaração ficou retida pela Receita?</h2>
+                    
+                    <span class="text-brand-600 font-bold uppercase tracking-widest text-xs">Sua declaração ficou retida pela Receita?</span>
+                    
+                    <h2 id="irrf-title" class="font-heading text-4xl font-extrabold text-slate-900 uppercase mt-3 mb-6">Imposto de Renda e Malha Fina</h2>
+                    
                     <div class="w-20 h-1.5 bg-brand-600 mx-auto rounded-full"></div>
                     <p class="text-slate-600 text-lg mt-8 max-w-2xl mx-auto">
                         Milhares de contribuintes têm suas declarações retidas todos os anos. <br>
-                        A M. Furtado resolve esse problema de forma rápida e segura.
+                        A <b>M. Furtado</b> resolve esse problema de forma rápida e segura.
                     </p>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-12 items-start">
-                    <!-- Coluna esquerda: causas comuns -->
                     <div class="bg-slate-50 rounded-2xl shadow-premium p-8 border border-slate-100">
                         <div class="flex items-center gap-3 mb-6">
                             <div class="w-12 h-12 bg-red-100 text-red-600 rounded-full flex items-center justify-center">
@@ -474,7 +454,6 @@
                         </ul>
                     </div>
 
-                    <!-- Coluna direita: soluções -->
                     <div class="bg-brand-800 rounded-2xl shadow-2xl p-8 text-white relative overflow-hidden">
                         <div class="absolute top-0 right-0 p-6 opacity-10">
                             <svg class="w-32 h-32" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
@@ -520,7 +499,6 @@
                     </div>
                 </div>
 
-                <!-- Chamada para ação -->
                 <div class="text-center mt-12">
                     <p class="text-slate-600 mb-4">Não espere a Receita te notificar. Resolva já sua pendência.</p>
                     <a href="https://wa.me/5522998792653" target="_blank" class="inline-flex items-center px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-full transition-all shadow-lg hover:scale-105 active:scale-95 uppercase text-sm tracking-widest">
@@ -541,7 +519,7 @@
                 <div class="text-center mb-16">
                     <span class="inline-block py-1 px-3 rounded bg-vet/20 text-vet-light border border-vet/30 text-xs font-bold uppercase tracking-widest mb-4">Exclusivo para o Mercado Pet</span>
                     <h2 id="vetcont-title" class="font-heading text-4xl md:text-5xl font-extrabold text-white mb-6">VETCont</h2>
-                    <p class="text-xl text-slate-300 max-w-2xl mx-auto">Não misture ração com medicação.<br>A sua contabilidade precisa de compreender as particularidades do seu nicho para reduzir impostos dentro da lei.</p>
+                    <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">Uma solução contábil <span class="text-vet-light font-semibold">desenhada exclusivamente</span> para clínicas, hospitais e pet shops que buscam a máxima redução tributária e blindagem patrimonial dentro da lei.</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-6">
@@ -794,7 +772,7 @@
                     </div>
                     
                     <p class="text-slate-400 max-w-sm mb-6">
-                        Excelência em serviços contábeis e consultoria empresarial. A nossa missão é ser o pilar de crescimento seguro para a sua empresa.
+                        Excelência em serviços contábeis e consultoria empresarial.<br>A nossa missão é ser o pilar de crescimento seguro para a sua empresa.
                     </p>
                 </div>
 
